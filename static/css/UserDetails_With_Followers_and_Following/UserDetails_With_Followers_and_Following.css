@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*
+==================================================
+            Full Profile Page Container
+================================================== */
+
+.Profile_Page_User_Posts_Comment_Container{
+    height: 100%;
+    width: 100%;
+    background-color: #ddd;
+    position: fixed;
+    overflow: hidden;
+    z-index: 800;
+}
+
+/*
+~~~*~~~~*~~~~~*~~~~~[ Full Profile Page Container ]~~~*~~~~*~~~~~*~~~~~ */
+.Profile_Page_User_Posts_Comment_Container_Hide{
+    display: none;
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    -: This Section is for User Profile And Posts :-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.Profile_Page_User_Profile_And_Post_Container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    width: 84%;
+    height: 100%;
+    position: fixed;
+}
+
+
+/*
+~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~
+       Profile Page Fixed Content Container
+~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~ */
+.User_Profile_Fixed_Content_Container{
+    height: 100%;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0px 0px 2px rgb(78, 78, 78);
+    grid-gap: 5px;
+}
+.User_Profile_Fixed_Content_Container::-webkit-scrollbar{
+    display: none;
+}
+.Profile_content{
+    height: 40px;
+    width: 100%;
+}
+
+/*
+~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~
+    This Dynamic Section Of User Profile
+~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~ */
+.User_Profile_Othere_Dynamic_Content_Container{
+    height: 100%;
+    padding: 0px 5px;
+    overflow: auto;
+}
+.User_Profile_Othere_Dynamic_Content_Container::-webkit-scrollbar{
+    display: none;
+}
+
+/* ~~~~~~#~~~~~~~#~~~~~~~#[ This is Main Posts Container ]#~~~~~~#~~~~~#~~~~~~#~~~~~~ */
+.User_profile_Main_Post_Container{
+    position: relative;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    padding-bottom: 150px;        /* [ This is Essential For Resizing Purpose ] */
+}
+
+/* ~~~~~~#~~~~~~~#~~~~~~~#[ This is Post PopUp Container ]#~~~~~~#~~~~~#~~~~~~#~~~~~~ */
+.User_Profile_MessageBox_Popup_Container{
+    background-color: transparent;
+    z-index: 600;
+}
+
+/* ~~~~~~~~~~~~~~[ Makin Page ResPonsive ]~~~~~~~~~~~~~~ */
+@media only screen and (max-width: 750px){
+    .Profile_Page_User_Profile_And_Post_Container{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 520px){
+    /* -: This Section is for User Profile And Posts :- */
+    .Profile_Page_User_Profile_And_Post_Container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: auto;
+    }
+
+       /* Profile Page Fixed Content Container */
+    .User_Profile_Fixed_Content_Container{
+        height: auto;
+    }
+    .Profile_content{
+        height: 20px;
+        border: 1px solid red;
+        box-sizing: border-box;
+    }
+
+        /* This is Main Posts Container  */
+    .User_Profile_Othere_Dynamic_Content_Container{
+        height: auto;
+        padding: 0px;
+    }
+    .Other_Fiexd_Content{
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+
+        /* ~~~~~~#~~~~~~~#~~~~~~~#[ This is Post PopUp Container ]#~~~~~~#~~~~~#~~~~~~#~~~~~~ */
+    .User_Profile_MessageBox_Popup_Container{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(253, 253, 253, 0.98);
+    }
+}
+
+@media only screen and (min-width: 520px){
+    .User_Profile_Othere_Dynamic_Content_Container_Hide{
+        display: none;
+    }
+}
+

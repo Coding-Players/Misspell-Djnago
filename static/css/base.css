@@ -1,0 +1,689 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #fff;
+    font-family: sans-serif;
+}
+.HideAll-NormalBody-Parts{
+    display: none;
+}
+button:focus{
+    outline: 0;
+}
+input:focus{
+    outline: 0;
+}
+/* ~~~~~~~~~~It contain Top navigation section~~~~~~~~~~~~~  */
+#navBar{
+    height: 50px;
+    background: #ff0080;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px rgb(241, 58, 58);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    justify-content: center;
+}
+
+#navBar ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    height: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    color:white;
+    text-shadow: 2px 2px 5px red;
+    cursor: pointer;
+    background: transparent;
+}
+#navBar ul a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+#navBar ul a:focus{
+    outline: 0;
+}
+.MenuIcon_top_right{
+    height: 40px;
+    width: 40px;
+}
+.MenuIcon_top_right img{
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+/* For hide and display NavigationIcon we use below section*/
+@media only screen and (min-width: 750px){
+    #NavMenu{
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px){
+    #navBar{
+        height: 40px;
+    }
+    .MenuIcon_top_right img{
+        margin-top: 0px;
+    }
+}
+/* ~~~~~~~~~~~~~~[ SEARCH BOX SECTION ]~~~~~~~~~~~~~  */
+.search-box{
+    position: fixed;
+    margin-top: 0.75em;
+    transform: translate(-50%, -50%);
+    background: white;
+    height: 40px;
+    border-radius: 40px;
+    padding: 0;
+    display: flex;
+}
+/* for styling the input box */
+.input-box{
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 10px;
+    color: #333;
+    font-size: 16px;
+    transition: 1s all;
+    line-height: 40px;
+    width: 600px;
+}
+
+/* for for search button styling */
+.btn-search{
+    color: #2f3640;
+    float: right;
+    background: linear-gradient(145deg, #e60073, #ff0089);
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+/* for for hovering the search icon back ground */
+.search-box:hover .btn-search{
+    background: linear-gradient(to bottom left, #00ff00 0%, #ffff00 100%);
+    box-shadow: none;
+    font-size: 25px;
+}
+
+/* for coloring search icon */
+.btn-search img{
+    padding: 5px;
+}
+.MenuIcon_top_right{
+    height: 30px;
+    width: 30px;
+}
+.MenuIcon_top_right img{
+    width: 90%;
+    height: 90%;
+}
+
+/* For SEARCH BOX SECTION responsive pourpose */
+@media only screen and (max-width: 750px){
+    /* for styling the input box */
+    .input-box{
+        width: 480px;
+    }
+}
+@media only screen and (max-width: 640px){
+    /* for styling the input box */
+    .input-box{
+        width: 360px;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .search-box{
+        position: fixed;
+        margin-top: 0.55em;
+        height: 35px;
+        border-radius: 35px;
+    }
+
+    /* for styling the input box */
+    .input-box{
+        width: 0px;
+        line-height: 30px;
+        padding: 0;
+    }
+    /* for for search button styling */
+    .btn-search{
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        background: #ff0080;
+        text-align: center;
+    }
+    .btn-search img{
+        padding: 1px;
+    }
+    .MenuIcon_top_right{
+        height: 30px;
+        width: 30px;
+    }
+    .MenuIcon_top_right img{
+        width: 80%;
+        height: 80%;
+    }
+    /* for for increasing the search box width */
+    .search-box:hover .input-box{
+        width: 280px;
+        padding: 0 6px;
+    }
+}
+@media only screen and (max-width: 240px){
+    .search-box:hover .input-box{
+        width: 180px;
+    }
+}
+/* ===========================================================================================================
+~~~~~~~~~~~~~[ Right Side Navigation Awesome Menu Some-Time Hide Some Time Show ]~~~~~~~~~~~~~~~~~~~ */
+nav{
+    width: 16%;
+    float: right;
+    position: relative;
+    float: right;
+    height: 100%;
+    box-shadow: 3px 1px 1px rgb(180, 177, 177);
+}
+nav ul{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+    list-style-type: none;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0px 0px 3px rgb(180, 177, 177);
+    z-index: -50;
+    padding-top: 50px;
+    overflow: auto;
+}
+.item{
+    border-top: 1px solid #2980b9;
+    overflow: hidden;
+}
+.item:first-child{
+    border-top: none;
+}
+.Navbtn{
+    display: block;
+    padding: 16px 20px;
+    background: transparent;
+    color: #159AC4;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+}
+.Navbtn:before{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    left: 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+.Navbtn img{
+    margin-right: 5px;
+    margin-left: -5px;
+}
+
+.sMenu{
+    background: #333;
+    font-weight: bold;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+.sMenu a{
+    display: block;
+    padding: 16px 26px;
+    color: white;
+    font-size: 12px;
+    margin: 4px 0;
+    position: relative;
+}
+.sMenu a:hover{
+    background: #b3ff00;
+    color: black;
+    text-decoration: none;
+}
+.sMenu a:before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #3498db;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+.sMenu a:hover:before{
+    opacity: 1;
+}
+.item:target .sMenu{
+    max-height: 10em;
+}
+.item a:last-child{
+    display: inline-block;
+}
+/* This portion is for asome nevigation bar Which contains Dark Screen Mood  */
+#Dark-Screen-Button{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: -5px;
+}
+.Dark-Screen-Off{
+    color: red;
+}
+.Dark-Screen-On{
+    color: rgb(65, 250, 9);
+}
+
+/* this is dark screen button section  */
+
+.Dark-screen-button-holder{
+    display: flex;
+}
+
+.darkScreen-checkbox{
+    opacity: 0;
+    position: absolute;
+}
+.label-darkScreen-checkbox{
+    background-color: rgb(255, 185, 185);
+    display: flex;
+    border-radius: 50px;
+    position: relative;
+    height: 16px;
+    width: 32px;
+    border: 0.5px solid rgb(184, 5, 5);
+}
+.darkScreen-checkbox:checked + .label-darkScreen-checkbox{
+    background-color: rgb(210, 255, 173);
+    border: 0.5px solid rgb(113, 187, 2);
+
+}
+.darkScreen-ball{
+    background-color: rgb(184, 5, 5);
+    position: absolute;
+    padding-top: 1px;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    transition: transform 0.3s linear;
+}
+.darkScreen-checkbox:checked + .label-darkScreen-checkbox .darkScreen-ball{
+    transform: translateX(17px);
+    background-color: rgb(113, 187, 2);
+}
+
+
+/* Making NaveBar responsive */
+@media only screen and (max-width: 750px){
+    nav{
+        margin-top: 0px;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+    }
+    nav .exit{
+        background-color: transparent;
+        z-index: 180;
+    }
+    nav .show-desktop{
+        width: 60%;
+        margin-left: 40%;
+        z-index: 200;
+        padding-top: 0px;
+    }
+    .hideMobile{
+        display: none;
+    }
+    .Navbtn{
+        font-weight: normal;
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================This is the Notification section of the page ================================== */
+#Notification_Message{
+    z-index: 500;
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    font-family: sans-serif;
+    /* display: none; */
+}
+.Notification_Message_DisplayNone{
+    display: none;
+}
+#Notification_message_holder{
+    height: 30%;
+    width: 40%;
+    position: relative;
+    margin-left: 30%;
+    margin-top: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #333;
+    overflow: hidden;
+    text-align: center;
+}
+.success{
+    background-color: rgb(190, 245, 190);
+    opacity: 0.9;
+    color: green;
+}
+.error{
+    background-color: rgb(236, 187, 183);
+    opacity: 0.9;
+    color: rgb(238, 11, 11);
+}
+.info{
+    background-color: rgb(166, 224, 220);
+    opacity: 0.9;
+    color: rgb(26, 7, 195);
+}
+#Cancil_Notification_message{
+    height: 10%;
+    float: right;
+    margin: 5px;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+#This_is_Notification_message{
+    height: 90%;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10%;
+}
+/* Making Notification responsive */
+@media only screen and (max-width: 750px){
+    #Notification_message_holder{
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 40px;
+    }
+    #Cancil_Notification_message{
+        font-size: 14px;
+    }
+    #This_is_Notification_message{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 450px){
+    #Notification_message_holder{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 50%;
+    }
+    #Cancil_Notification_message{
+        font-size: 14px;
+    }
+    #This_is_Notification_message{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 350px){
+    #Notification_message_holder{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 30px;
+    }
+    #Cancil_Notification_message{
+        font-size: 10px;
+    }
+    #This_is_Notification_message{
+        font-size: 10px;
+    }
+}
+/* ======================================================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~[ This part contains all the Dynamic Containt section of the page ]~~~~~~~~~~~~~~~~~~~~*/
+#Dynamic-Content-section{
+    padding-top: 50px;
+    width: 84%;
+    z-index: -70;
+}
+section{
+    width: 100%;
+    max-height: 50px;
+    float: left;
+}
+
+.Home-cards-holder{  /*It is most important*/
+    padding-top: 45px;
+    width: 84%;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    margin-bottom: 50px;
+}
+.Home-cards-holder::-webkit-scrollbar{
+    display: none;
+}
+/* Making Section responsive */
+@media only screen and (max-width: 750px){
+    section{
+        width: 100%;
+    }
+    .Home-cards-holder{  /*It is most important*/
+        height: auto;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+@media only screen and (max-width: 580px){
+    .Home-cards-holder{  /*It is most important*/
+        padding-top: 40px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .Home-cards-holder{  /*It is most important*/
+        margin-bottom: 40px;
+        padding-top: 35px;
+    }
+}
+/* ~~~~~~~~~~~~[ This portion containing Top Scrall-menu section ]~~~~~~~~~~~~ */
+/* This part is for scrolling purpose */
+#Scroll-MenuBar{
+    background-color: #fff;
+    overflow: auto;
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    border-bottom: 2px solid red;
+    width: 84%;
+    z-index: 80;
+    cursor: pointer;
+}
+#Scroll-MenuBar a{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 5px 14px;
+    font-size: 14px;
+    font-style: oblique;
+    color: #159AC4;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 90;
+}
+#Scroll-MenuBar a:hover{
+    background-color: #222;
+    color: #fff;
+    margin-top: 0px;
+    transition: 0.5s;
+}
+
+/* styling those icons */
+.Scroll-MenuBar-iconStyle{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.Scroll-MenuBar-iconStyle-img{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: linear-gradient(to top, #ffff00 0%, #ff3300 100%);
+    padding: 5px;
+    box-shadow: 1px 1px 2px rgb(245, 6, 126);
+    margin-right: 5px;
+}
+.Scroll-MenuBar-iconStyle-img img{
+    height: 24px;
+    width: 24px;
+}
+
+.Scroll-MenuBar-iconStyle-img:hover{
+    background: linear-gradient(to bottom, #ffff00 0%, #ff3300 100%);
+    box-shadow: 0px 0px 2px cyan;
+}
+/*----*** STYLING OF SCROLL BUTTON ***------*/
+#Scroll-MenuBar::-webkit-scrollbar{
+    height: 6px;
+    cursor: pointer;
+}
+#Scroll-MenuBar::-webkit-scrollbar-track{
+    background: rgb(102, 24, 117);
+    border-radius: 2.5px;
+}
+#Scroll-MenuBar::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, red, yellow);
+    border-radius: 2.5px;
+
+}
+@media only screen and (max-width: 750px){
+    #Scroll-MenuBar{
+        width: 100%;
+    }
+    #Scroll-MenuBar a{
+        padding: 2px 10px;
+        font-size: 11px;
+    }
+    #Scroll-MenuBar a img{
+        height: 20px;
+        width: 20px;
+        padding: 2px;
+    }
+}
+@media only screen and (max-width: 600px){
+    #Scroll-MenuBar{
+        transition: 0.8s;
+    }
+    #Scroll-MenuBar::-webkit-scrollbar{
+        height: 5px;
+    }
+}
+@media only screen and (max-width: 480px){
+    #Scroll-MenuBar{
+        margin-top: -10px;
+    }
+}
+@media only screen and (max-width: 450px){
+    #Scroll-MenuBar::-webkit-scrollbar{
+        display: none;
+    }
+    #Scroll-MenuBar a{
+        padding: 2px 10px;
+    }
+    .Scroll-MenuBar-iconStyle-img{
+        margin-right: 2.5px;
+    }
+
+}
+
+/* ==============================================================================================================
+ ~~~~~~~~~~~~~~~~~~~~[ This section contains footer menu ]~~~~~~~~~~~~~  */
+#fixedFooter{
+    background-color: #fff;
+    width: 84%;
+    height: 50px;
+    box-shadow: -1px -1px 0px 0px red;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: space-between;
+    z-index: 90;
+}
+
+#fixedFooter a{
+    text-decoration: none;
+    padding: 2px;
+    color: black;
+    font-weight: bold;
+    font-style: oblique;
+    color: #159AC4;
+    font-size: 18px;
+    text-decoration: none;
+    /* background-color: #78F20A; */
+    width: 20%;
+}
+#fixedFooter a:hover{
+    background-color: #222; /*this is for hovering footer menu*/
+    color: #fff;
+}
+
+
+/* Making Footer resposive */
+@media only screen and (max-width: 750px){
+    #fixedFooter{
+        width: 100%;
+        box-shadow: -1px -1px 3px  red;
+    }
+    #fixedFooter a{
+        font-size: 11px;
+        font-weight: bold;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 480px){
+    #fixedFooter{
+        width: 100%;
+        box-shadow: -1px -1px 3px  red;
+        align-items: center;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        height: 40px;
+    }
+    #fixedFooter a{
+        width: 20%;
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 350px){
+    #fixedFooter{
+        overflow: auto;
+    }
+    #fixedFooter a{
+        width: 70px;
+    }
+}

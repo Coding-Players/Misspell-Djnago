@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Importing Jquery library for this page-->
+    <script src="{% static 'jquery/jquery-3.4.1.min.js' %}" async defer></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+    {% block Allcss%} {% endblock %}
+    <title>Home</title>
+</head>
+
+<body>
+{% block body %}
+    <!-- *******************************From Here the Homepage Body Starting*************************************** -->
+    <div id="Body" class="ThisIsMainPart">
+        <!-- ===============This section contains header==========================  -->
+        <header id="navBar">
+            <ul>
+                <li>logo</li>
+                <li>
+                    <div class="search-box">
+                        <input class="input-box" type="text" name="" placeholder="Search Hare....">
+                        <a href="#" class="btn-search">
+                            <img src="{% static 'Images/IconsForHome/search-24px.svg' %}">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <!-- ~~~~~~~~Navigation Awesome Menu Some Time Hidden Some Time Show[PART-1]~~~~~~~~~~ -->
+                    <a href="#">
+                        <div class="MenuIcon_top_right" id="NavMenu">
+                            <img src="{% static 'Images/IconsForHome/menu.svg' %}">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </header>
+
+        <!--
+        ________________________________________________________________________________________________
+                        Navigation Awesome Menu Some Time Hidden Some Time Show[PART-2]
+        ________________________________________________________________________________________________
+        -->
+        <nav>
+            <ul class="exit hideMobile" id="Exit-from-Navbar">
+                <!-- This is Important because it is exit section of menu bar  -->
+            </ul>
+            <ul class="show-desktop hideMobile" id="nav">
+                <!--  -->
+                <li class="item" id="abc1">
+                    <a href="#abc1" class="Navbtn">
+                        <img src="{% static 'Images/IconsForHome/uploadThings.svg' %}">Upload Things
+                    </a>
+                    <div class="sMenu">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'products_upload' user.id %}">Upload Products</a>
+                        <a href="#">Coming Soon</a>
+                        {% else %}
+                        <a href="{% url 'LogIn' %}" >Upload Products</a>
+                        <a href="#">Coming Soon</a>
+                        {% endif %}
+                    </div>
+                </li>
+
+                <li class="item" id="abc2">
+                    <a href="#abc2" class="Navbtn">
+                        <img src="{%static 'Images/IconsForHome/uploadThings.svg'%}">Set Home Page As
+                    </a>
+                    <div class="sMenu">
+
+<!--  =====================================[ Just For Test Case ]===================================== -->
+                        {% if user.is_authenticated %}
+                        <a href="#">Test</a>
+                        <a href="#" >Profile Update</a>
+                        <a href="#">Coming Soon</a>
+                        {% endif %}
+<!--  =====================================[ Just For Test Case ]===================================== -->
+
+                    </div>
+                </li>
+
+                <!-- Dark Screen Mode contanint here -->
+                <li class="item">
+                    <a href="#" class="Navbtn">Dark Screen Mood<br><br>
+
+                        <!-- This is Dark Screen button section  -->
+                        <div class="Dark-screen-button-holder">
+                            <p class="Dark-Screen-Off">OFF</p>
+                                <input type="checkbox" class="darkScreen-checkbox" name="" id="darkScreen-checkbox">
+                                <label for="darkScreen-checkbox" class="label-darkScreen-checkbox">
+                                    <div class="darkScreen-ball">
+
+                                    </div>
+                                </label>
+                            <p class="Dark-Screen-On">ON</p>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~This is message section~~~~~~~~~~~~~~~~~~  -->
+        {% for message in messages %}
+        <div id="Notification_Message">
+            <div id="Notification_message_holder" {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                <div id="Cancil_Notification_message">
+                    X
+                </div>
+                <div id="This_is_Notification_message">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- This portion contains All Dynamic part of the web -->
+        {% block Dynamic_Container %}
+        <div id="Dynamic-Content-section">
+
+            <!-- We Use this Only for Profile -->
+            <!-- =======================This section constains all menu===============  -->
+            <section>
+                <div id="Scroll-MenuBar">
+                    <!-- Products Icon With link  -->
+                    <a href="{% url 'all_products' %}" class="Go_to_Other_page">
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{%static 'Images/IconsForHome/product.svg'%}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                All Products
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Chat Icon With link  -->
+                    <a
+                    {% if user.is_authenticated %} href="{% url 'Friends_list' request.user.id %}"
+                    {% else %} href="{% url 'LogIn' %}" {% endif %} class="Go_to_Other_page">
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{%static 'Images/IconsForHome/AllMessage.svg'%}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                Chat
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Tending Icon With link  -->
+                    <a href="#" class="Go_to_Other_page">
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{% static 'Images/IconsForHome/Tending.svg' %}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                Tending
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Settings Icon With link  -->
+                    <a href="#">
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{%static 'Images/IconsForHome/Settings-tools.svg'%}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                Settings
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Log Out Icon With link  -->
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'LogOut' %}" id="LogOutRequest">
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{%static 'Images/IconsForHome/logout.svg'%}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                Log Out
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Sign Up Icon With link  -->
+                    {% else %}
+                    <a href="{% url 'SignUp' %}">
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{%static 'Images/IconsForHome/SignUp.svg'%}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                Sign Up
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Log In Icon With link  -->
+                    <a href="{% url 'LogIn' %}" >
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{%static 'Images/IconsForHome/SignUp.svg'%}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                Log In
+                            </div>
+                        </div>
+                    </a>
+                    {% endif %}
+                    <!-- About Us Icon With link  -->
+                    <a href="#">
+                        <div class="Scroll-MenuBar-iconStyle">
+                            <div class="Scroll-MenuBar-iconStyle-img">
+                                <img src="{%static 'Images/IconsForHome/AboutUs.svg'%}">
+                            </div>
+                            <div class="Scroll-MenuBar-iconStyle-txt">
+                                About Us
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+
+            <!-- ========Ther it is Also A dynamic content Where we place Cards incase of home page -->
+            <div class="Home-cards-holder" id="We_addPage_AlsoHere">
+                {% block HomeContent %}
+                hello
+                {% endblock %}
+            </div>
+
+         {% endblock %}
+        </div>
+
+
+        <!--==============This is for fixed footer menu=========-->
+        <div id="fixedFooter">
+            <a href="{% url 'ShopHome' %}">
+                <div class="Scroll-MenuBar-iconStyle footer-icon-style">
+                    <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
+                        <img src="{% static 'Images/IconsForHome/home-24px.svg' %}">
+                    </div>
+                    <div class="footer-icon-style-txt">
+                        Home
+                    </div>
+                </div>
+            </a>
+
+            <a  {% if user.is_authenticated %} href="{%  url 'UserProfile' user.id %}" {% else %} href="{% url 'LogIn' %}" {% endif %}>
+                <div class="Scroll-MenuBar-iconStyle footer-icon-style">
+                    <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
+                        <img src="{% static 'Images/IconsForHome/entrepreneur.svg' %}">
+                    </div>
+                    <div class="footer-icon-style-txt">
+                        Profile
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="Go_to_Other_page">
+                <div class="Scroll-MenuBar-iconStyle footer-icon-style">
+                    <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
+                        <img src="{% static 'Images/IconsForHome/worldwide.svg' %}">
+                    </div>
+                    <div class="footer-icon-style-txt">
+                        Map
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="Go_to_Other_page">
+                <div class="Scroll-MenuBar-iconStyle footer-icon-style">
+                    <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
+                        <img src="{%static 'Images/IconsForHome/play.svg'%}">
+                    </div>
+                    <div class="footer-icon-style-txt">
+                        Videos
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'Shoping_Cart' %}">
+                <div class="Scroll-MenuBar-iconStyle footer-icon-style">
+                    <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
+                        <img src="{% static 'Images/IconsForHome/shopping_cart-24px.svg' %}">
+                    </div>
+                    <div class="footer-icon-style-txt">
+                        Cart
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+<!--This section contains All java scripts-->
+
+
+    <script src="{% static 'js/base.js' %}" async defer></script>
+    <script src="{% static 'js/Notification_Message.js' %}" async defer></script>
+    {% block javascript %}
+    {% load static %}
+
+    {% endblock %}
+
+
+</body>
+
+</html>

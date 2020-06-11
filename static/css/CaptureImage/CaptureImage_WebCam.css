@@ -1,0 +1,268 @@
+.search-box{
+    display: none;
+}
+/* <-- ===========[ Full Image Captureing Page container ]=========== --> */
+#ImageCapture_Page{
+    height: 100%;
+    width: 84%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+/* <-- :~~~~~~~~~~:[ Inner Content Holder Container ]:~~~~~~~~~~: --> */
+#ImageCapture_Page_Inner_Container{
+    position: absolute;
+    margin: 55px 0px;
+    height: 100%;
+    width: 100%;
+    max-width: 420px;
+    max-height: 450px;
+    background-color: #fff;
+    overflow: auto;
+    box-shadow: 0px 0px 2px #333;
+}
+.ImageCapture_Page_Inner_Container_Hide_This{
+    display: none;
+}
+
+/* <-- :~~~~*~~~~~~:[ This is Streaming Holder Container ]:~~~~*~~~~~~: --> */
+#ImageCapture_Page_Inner_Container::-webkit-scrollbar{
+    display: none;
+}
+
+.ImageCapture_Page_Heading{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(39, 163, 251);
+    background-color: #fff;
+    background: #fff;
+}
+.Image_Previewing_Section{
+    background-color: #fff;
+    height: 280px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.VideoStreaming_Section{
+    height: 280px;
+    width: 100%;
+}
+#stream{
+    height: 280px;
+    width: 100%;
+    transform: rotateY(180deg);
+    object-fit: cover;
+}
+
+.Image_Previe_List{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#capture img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+/* <-- Capturing Button Section --> */
+.Captureing_Button_Section{
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.button{
+    height: 30px;
+    width: auto;
+    font-size: 14px;
+    padding: 0px 5px;
+    background-color: rgba(128, 255, 0, 0.4);
+    font-weight: bold;
+    color: green;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+}
+
+/* <-- Cancel Section Container --> */
+.Captureing_Cancel_Container{
+    height: 30px;
+    width: 100%;
+    align-items: center;
+}
+.Captureing_Cancel_Container a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: red;
+    background-color: rgba(255, 68, 0, 0.4);
+    font-size: 18px;
+    font-weight: bold;
+}
+/* <-- Where to Use this Picture --> */
+.Where_To_Use_This_Picture{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* <-- Profile Picture Changing Form --> */
+#Profile_Picture_Changing_Form button{
+    height: 30px;
+    background-color: rgba(207, 251, 181, 0.768);
+    color: rgb(39, 163, 251);
+    border: none;
+    padding: 0px 5px;
+    width: 100%;
+}
+
+/* :~~~~~~~~~~~~~~~:~~~~~~~~~~~~:[ Post Create Page ]:~~~~~~~~~~~~~~~:~~~~~~~~~~~~: */
+#Post_Create_Page{
+    position: absolute;
+    margin: 55px 0px;
+    height: 100%;
+    width: 100%;
+    max-width: 420px;
+    max-height: 450px;
+    background-color: #fff;
+    overflow: auto;
+    box-shadow: 0px 0px 2px #333;
+}
+
+.Basic_ProstCreate_Input_Holder{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr auto 0.75fr 0.75fr;
+    grid-gap: 5px;
+    border-radius: 5px;
+    height: auto;
+    overflow: hidden;
+    max-width: 460px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    min-width: 340px;
+    text-align: center;
+    color: rgba(96, 96, 245, 0.911);
+}
+.Basic_ProstCreate_Input{
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 14px;
+}
+.Basic_ProstCreate_Input label{
+    background-color: #fff;
+    font-weight: bold;
+    justify-content: center;
+}
+#id_subject{
+    background-color: #fff;
+    border: 1px solid blue;
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.Basic_ProstCreate_Input input:focus{
+    outline: 0;
+}
+
+.Basic_ProstCreate_Input button:focus{
+    outline: 0;
+}
+#Post_Pick_Lable_Selector label{
+    background-color: rgba(128, 255, 0, 0.4);
+    height: 25px;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: green;
+    cursor: pointer;
+}
+#Post_Pick_Lable_Selector label img{
+    height: 25px;
+    width: 25px;
+}
+
+#id_post_pick{
+    display: none;
+}
+.UserPost_image_preview{
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    min-height: 180px;
+    max-width: 420px;
+}
+.UserPost_image_preview img{
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Basic_ProstCreate_Input button{
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.Basic_ProstCreate_Input_Submit_Button{
+    background-color: rgba(128, 255, 0, 0.4);
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+.Basic_ProstCreate_Input_Cancel_Button{
+    background-color: rgba(255, 68, 0, 0.4);
+    font-size: 18px;
+    font-weight: bold;
+    display: grid;
+    overflow: hidden;
+}
+.Basic_ProstCreate_Input_Cancel_Button a{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: red;
+    padding-top: 5px;
+}
+
+/* :~~~~~~~~~~~~:[ For Hiding The Contents ]:~~~~~~~~~~~~~~~: */
+.Hide_This{
+    display: none;
+}
+/* <-- :~~~~~~~~~~:[ Making Responsive ]:~~~~~~~~~~: --> */
+@media only screen and (max-width: 750px){
+    #ImageCapture_Page{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 420px){
+    #ImageCapture_Page_Inner_Container{
+        width: 100%;
+        max-width: 100%;
+        margin: 45px 0px;
+        box-shadow: none;
+    }
+    #Post_Create_Page{
+        margin: 45px 0px;
+        box-shadow: none;
+    }
+
+}
+

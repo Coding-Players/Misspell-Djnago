@@ -1,0 +1,32 @@
+/* <!-- Service Provider Profile Picture Preview--> */
+
+#SerV_Profile_image_preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+#id_SerV_Profile_pick{
+    display: none;
+}
+.SerV_Profile_image_preview__image{
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+}
+
+.SerV_Profile_image_preview__image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.SerV_Profile_image_preview_default_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 145px;
+    background-color: #eee;
+}

@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* background-color: chartreuse; */
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+/* <!-- =========:~~~~~:==========[ Hole Form Page Holder ]=========:~~~~~:========== --> */
+.All_Profile_From_Base_Container{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.Basic_From_Holder{
+    display: grid;
+    grid-template-rows: auto 25px auto;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+}
+
+/* <!-- ===========================[ Form Overhed Link Section ]=========================== --> */
+.All_From_links{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    font-size: 12px;
+    font-style: oblique;
+    font-weight: bold;
+    padding: 3px 0px;
+    grid-gap: 5px;
+    padding: 5px;
+}
+.All_From_links_list a{
+    text-decoration: none;
+}
+
+.Account_Creation_Link_With_Icon{
+    display: flex;
+    color: rgba(96, 96, 245, 0.911);
+    background-color: none;
+    text-align: left;
+}
+
+.Account_Creation_Link_Icon{
+    display: flex;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background: linear-gradient(to top, #ffff00 0%, #ff3300 100%);
+    justify-content: center;
+    align-items: center;
+
+}
+.Account_Creation_Link_Icon img{
+    padding: 2px;
+    height: 31px;
+    width: 31px;
+    border-radius: 50%;
+}
+
+/* <!-- ===========================[ Which Form Description ]=========================== --> */
+.From_Type_is{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-weight: bold;
+    background-color: rgba(128, 255, 0, 0.4);
+    color: green;
+}
+/* <!-- ===========================[ This is Normal Profile Update Form ]=========================== --> */
+.Main_From_Container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* <!-- :~~~~~~~~~~~~~~~:[ Form First Section ]:~~~~~~~~~~~~~~~:--> */
+.Main_From_Container_Form_first{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 5px;
+    grid-gap: 10px;
+    box-shadow: 0px 0px 2px rgb(41, 41, 42);
+}
+
+.BasicFrom_InPut_Submit_first{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    font-size: 13px;
+}
+.BasicFrom_InPut_Submit_first label{
+    color: rgba(96, 96, 245, 0.911);
+    font-weight: bold;
+    text-align: left;
+}
+.BasicFrom_InPut_Submit_first label em{
+    color: red;
+    font-weight: bolder;
+}
+.BasicFrom_InPut_Submit_first input{
+    border: none;
+    border-bottom: 2px solid rgba(96, 96, 245, 0.911);
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+.BasicFrom_InPut_Submit_first input:focus{
+    transition: 1s;
+    outline: 0;
+    border-bottom: 2px solid green;
+}
+.BasicFrom_InPut_Submit_first select{
+    border: none;
+    border-bottom: 2px solid rgba(96, 96, 245, 0.911);
+    transition: 1s;
+    font-size: 14px;
+}
+.BasicFrom_InPut_Submit_first select:focus{
+    outline: 0;
+    border-bottom: 2px solid green;
+}
+#NextSection_Of_Form_InnerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gainsboro;
+    background-color: rgba(177, 238, 255, 0.4);
+    padding: 5px 0px;
+}
+#NextSection_Of_Form_InnerContainer a{
+    color: rgba(96, 96, 245, 0.911);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    font-variant: small-caps;
+    font-style: oblique;
+}
+/* <!-- :~~~~~~~~~~~~~~~:[ Form Second Section ]:~~~~~~~~~~~~~~~:--> */
+.Main_From_Container_Form_second{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 2px rgb(41, 41, 42);
+}
+#PreviousSection_Of_Form_InnerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gainsboro;
+    background-color: rgba(177, 238, 255, 0.4);
+    padding: 5px 0px;
+}
+#PreviousSection_Of_Form_InnerContainer a{
+    color: rgba(96, 96, 245, 0.911);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    font-variant: small-caps;
+    font-style: oblique;
+}
+.BasicFrom_InPut_Submit_TextArea label{
+    color: rgba(96, 96, 245, 0.911);
+    font-weight: bold;
+    font-size: 13px;
+}
+.BasicFrom_InPut_Submit_TextArea textarea{
+    resize: none;
+    width: 100%;
+    min-height: 130px;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    color: black;
+    border-radius: 5px;
+    text-align: left;
+}
+.BasicFrom_InPut_Submit_TextArea textarea:focus{
+    outline: 0;
+}
+
+/* <!-- User Profile Picture --> */
+.BasicFrom_InPut_Submit_Profile_Picture{
+    display: grid;
+    grid-gap: 5px;
+}
+.BasicFrom_InPut_Submit_Profile_Picture label{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(96, 96, 245, 0.911);
+    background-color: rgba(177, 238, 255, 0.4);
+}
+.BasicFrom_InPut_Submit_Profile_Picture label img{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+#UserProfile_image_Preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+#id_profile_pick{
+    display: none;
+}
+.UserProfile_image_preview__image{
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+}
+
+.UserProfile_image_preview__image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.UserProfile_image_preview_default_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 145px;
+}
+/* <!-- User Profile Background Picture --> */
+.BasicFrom_InPut_Submit_Profile_Background_Picture label{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(96, 96, 245, 0.911);
+    background-color: rgba(177, 238, 255, 0.4);
+}
+.BasicFrom_InPut_Submit_Profile_Background_Picture label img{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+#id_profile_Background_pic{
+    display: none;
+}
+.UserProfile_Background_image_preview__image{
+    display: none;
+    width: 100%;
+    height: 150px;
+}
+
+.UserProfile_Background_image_preview__image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.UserProfile_Background_image_preview_default_text{
+    display: flex;
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+
+/* From Submit Button  */
+.BasicFrom_InPut_Submit{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.BasicFrom_InPut_Submit_first button{
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(158, 250, 66, 0.741);
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+.BasicFrom_InPut_Submit_first button:focus{
+    outline: 0;
+}
+
+
+@media only screen and (max-width: 520px){
+    .Main_From_Container_Form_first_Hide{
+        display: none;
+    }
+    .Main_From_Container_Form_second_Hide{
+        display: none;
+    }
+
+}
+@media only screen and (min-width: 520px){
+    /* <!-- :~~~~~~~~~~~~~~~:[ Form First Section ]:~~~~~~~~~~~~~~~:--> */
+    .Main_From_Container_Form_first{
+        font-size: 16px;
+    }
+    .Main_From_Container_Form_first{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .NextSection_Of_Form{
+        display: none;
+    }
+    .PreviousSection_Of_Form{
+        display: none;
+    }
+}

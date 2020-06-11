@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>This is message Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/normalProfile/NormalPostComment/normalPost_Create_Comment.css' %}">
+</head>
+<body>
+
+    <!-- ************[ This Is Message Box Display Container ]************ -->
+    <div class="Harman_Holarith Chat_Box_Dispaly_Container" id="NewMessage_box_Disppaly_Conatainer">
+
+        {% for comment in normal_comments %}
+
+            <!--  Normal User Message Section  -->
+            {% ifequal request.user.normalprofile.id comment.Comment_by.id %}
+
+            <!--  This is Reply Comment Section  -->
+            <div class="Reply_Message_Shower_Rapper">
+                <div class="Reply_Message_Shower_Details">
+                    {{ comment.timeStamp }}, {{ comment.Comment_by }}.
+                    <a href="#">
+                        <img src="{{ comment.Comment_by.profile_pick.url }}" alt="">
+                    </a>
+                </div>
+                <div class="Reply_Message_Shower_Text">
+                    {{ comment.comments }}
+                </div>
+            </div>
+            {% else %}
+            <!--  This is Reply Comment Section  -->
+            <div class="User_Message_Shower_Rapper">
+                <div class="User_Message_Shower_Details">
+                    <a href="#">
+                        <img src="{{ comment.Comment_by.profile_pick.url }}" alt="">
+                    </a>
+                    {{ comment.Comment_by }}, {{ comment.timeStamp }}.
+                </div>
+                <div class="User_Message_Shower_Text">
+                    {{ comment.comments }}
+                </div>
+            </div>
+            {% endifequal %}
+
+        {% endfor %}
+    </div>
+
+</body>
+</html>

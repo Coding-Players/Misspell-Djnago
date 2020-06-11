@@ -1,0 +1,157 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/normalProfile/profileUpdate.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block HomeContent %}
+
+<!-- =========:~~~~~:==========[ Hole Form Page Holder ]=========:~~~~~:========== -->
+    <div class="All_Profile_From_Base_Container">
+
+        <div class="Basic_From_Holder">
+            <!-- ===========================[ Form Overhed Link Section ]=========================== -->
+            <div class="All_From_links">
+                <div class="All_From_links_list">
+                    <a href="{% url 'UserProfile' user.id %}">
+                        <div class="Account_Creation_Link_With_Icon">
+                            <div class="Account_Creation_Link_Icon">
+                                <img src="{% static 'Images/IconsForHome/return.svg' %}" alt="Back Icon">
+                            </div>
+                            Cancel
+                        </div>
+                    </a>
+                </div>
+                <div class="All_From_links_list">
+                    <a href="{% url 'ServiceProvider_Profile_Update' user.id %}">
+                        <div class="Account_Creation_Link_With_Icon">
+                            <div class="Account_Creation_Link_Icon">
+                                <img src="{% static 'Images/FromsIcon/SeviceProfile.png' %}" alt="Create Service Provider Profile Icon">
+                            </div>
+                            Create Service Provider Profile
+                        </div>
+                    </a>
+                </div>
+                <div class="All_From_links_list">
+                    <a href="{% url 'Distributor_Profile_Update' user.id %}">
+                        <div class="Account_Creation_Link_With_Icon">
+                            <div class="Account_Creation_Link_Icon">
+                                <img src="{% static 'Images/FromsIcon/DistProfile.png' %}" alt="Create Distributor Profile Icon">
+                            </div>
+                            Create Distri-butor Profile
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ===========================[ Which Form Description ]=========================== -->
+            <div class="From_Type_is">
+                {{ user.normalprofile.name }} Update Your Normal Profile
+            </div>
+            <!-- ===========================[ This is Normal Profile Update Form ]=========================== -->
+            <div class="Main_From_Container">
+                <form method="post" action="{% url 'NormalProfileUpdate' user.id %}" enctype="multipart/form-data" id="normalprofile_form">
+                {% csrf_token %}
+
+                    <!-- :~~~~~~~~~~~~~~~:[ Form First Section ]:~~~~~~~~~~~~~~~:-->
+                    <div class="Main_From_Container_Form_first" id="Main_From_Container_Form_first">
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_name">Enter Name<em>*</em>:</label>
+                            <input type="text" name="name" value="{{ user.normalprofile.name }}" maxlength="50" required="" id="id_name">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_age">Enter Age<em>*</em>:</label>
+                            <input type="number" name="age" value="{{ user.normalprofile.age }}" required="" id="id_age" placeholder="Eg: 24">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_address">Enter Address:</label>
+                            <input type="text" name="address" maxlength="255" id="id_address">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_status">Set Your Status<em>*</em>:</label>
+                            <input type="text" name="status" value="{{ user.normalprofile.status }}" maxlength="50" required="" id="id_status">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_phone_no">Enter Phone No.:</label>
+                            <input type="text" name="phone_no" maxlength="15" id="id_phone_no">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            {{ form.gender }}
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_TextArea">
+                            <label for="id_description">Write About You:</label><br>
+                            <textarea name="description" id="id_description"></textarea>
+                        </div>
+                        <div class="BasicFrom_InPut_Submit_first NextSection_Of_Form">
+                            <div id="NextSection_Of_Form_InnerContainer">
+                                <a href="#">Next</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- :~~~~~~~~~~~~~~~:[ Form Second Section ]:~~~~~~~~~~~~~~~:-->
+                    <div class="Main_From_Container_Form_second Main_From_Container_Form_second_Hide" id="Main_From_Container_Form_second">
+
+                        <!-- User Profile Picture -->
+                        <div class="BasicFrom_InPut_Submit_Profile_Picture">
+
+
+                            <div class="UserProfile_image_preview" id="UserProfile_image_Preview">
+                                <img src=" " class="UserProfile_image_preview__image">
+                                <span class="UserProfile_image_preview_default_text">Profile Image PreView</span>
+                            </div>
+
+                            <input type="file" name="profile_pick" accept="image/*" id="id_profile_pick">
+
+                            <label for="id_profile_pick">
+                                <img src="{% static 'Images/IconForPosts/folderIcon.svg' %}" alt="file Icon">
+                                Chose Profile Picture:
+                            </label>
+                        </div>
+
+                        <!-- User Profile Background Picture -->
+                        <div class="BasicFrom_InPut_Submit_Profile_Background_Picture">
+
+                            <div class="UserProfile_Background_image_preview" id="UserProfile_Background_image_Preview">
+                                <img src="" class="UserProfile_Background_image_preview__image">
+                                <span class="UserProfile_Background_image_preview_default_text">Image PreView</span>
+                            </div>
+
+                            <input type="file" name="profile_Background_pic" accept="image/*"
+                                id="id_profile_Background_pic">
+
+                            <label for="id_profile_Background_pic">
+                                <img src="{% static 'Images/IconForPosts/folderIcon.svg' %}" alt="file Icon">
+                                Profile Background Picture:
+                            </label>
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first BasicFrom_InPut_Submit">
+                            <button type="submit">Submit</button>
+                        </div>
+
+                        <!-- Main_From_Container_Form_second_Hide -->
+                        <div class="PreviousSection_Of_Form">
+                            <div id="PreviousSection_Of_Form_InnerContainer">
+                                <a href="#">Previous</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{% static 'js/normalProfile/profileUpdate.js' %}" async defer></script>
+{% endblock %}

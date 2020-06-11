@@ -1,0 +1,93 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/ChatSon/ChatSon.css' %}" type="text/css">
+{% endblock %}
+<!--==========================[This is the Body part of this page]==========================-->
+{% block body %}
+    <div class="Chat_Base_Container">
+        <div class="Chat_Box_Holder_Container">
+
+            <!-- ************[ This Is Header Contaiern Of Chat Box ]************ -->
+            <div class="Chat_Box_Header_container">
+                <div class="Chat_Box_User_image_icon">
+                    <a href="{% url 'All_User_Details_page' Detail_Of_User.normalprofile.id %}">
+                        <img src="{{ Detail_Of_User.normalprofile.profile_pick.url }}" alt="">
+                    </a>
+                </div>
+
+                <div class="Chat_Box_UserName_Container">{{ Detail_Of_User.normalprofile.name }}</div>
+
+                <div class="Chat_Box_NewMessage_Container">New 0</div>
+
+                <div class="Return_From_Chat_Box">
+                    <a href="{% url 'Friends_list' request.user.id %}">
+                        <img src="{% static 'Images/IconsForHome/back.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- ************[ This Is Message Box Display Container ]************ -->
+            <div class="Harman_Holarith Chat_Box_Dispaly_Container" id="message_box_Disppaly_Conatainer">
+                <div id="Scroll_Ydiraction_Container">
+                    {% for message in all_messages %}
+                    {% ifequal message.sender.id Detail_Of_User.id %}
+                    <div>
+                        <div class="User_Message_Shower_Rapper">
+                            <div class="User_Message_Shower_Details">
+                                By:{{ message.receiver.normalprofile.name }}, {{ message.timestamp }}
+                            </div>
+                            <div class="User_Message_Shower_Text">
+                                {{ message.msg_txt }}
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div>
+                        <div class="Reply_Message_Shower_Rapper">
+                            <div class="Reply_Message_Shower_Details">
+                                {{ message.timestamp }}, By: You
+<!--                                {{ message.receiver.normalprofile.name }}-->
+                            </div>
+                            <div class="Reply_Message_Shower_Text">
+                                {{ message.msg_txt }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endifequal %}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+
+
+            <!-- ************[ This Is Message Submit Container ]************ -->
+            <div class="Harman_Holarith Chat_Submit_Container">
+                <div class="Chat_Submit_Normal_Text Chat_Submit_Normal_TextOnly">
+                    <form method="post" action="{% url 'Create_Chat' Detail_Of_User.id %}">
+                        {% csrf_token %}
+                        <textarea name="message_text" placeholder="Enter Your MSG..." required></textarea>
+                        <button type="submit">
+                            <img src="{% static 'Images/IconForPosts/send.svg' %}" alt="">
+                        </button>
+                    </form>
+                </div>
+                <div class="Chat_Submit_Normal_Text Chat_Submit_File_Fileds">
+                    <form>
+                        <label for="Chat_File_Submit">
+                            <img src="{% static 'Images/IconForPosts/folderIcon.svg' %}" alt="">
+                        </label>
+                        <input type="file" id="Chat_File_Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'js/ChatSon/ChatSon.js' %}" async defer></script>
+{% endblock %}

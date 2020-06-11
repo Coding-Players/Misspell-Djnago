@@ -1,0 +1,137 @@
+.User_Profile_MessageBox_Popup_Container{
+    padding: 0px 5px;
+    grid-gap: 5px;
+}
+.User_Profile_MessageBox_Popup_Container_Hide{
+    display: none;
+}
+
+.User_Profile_MessageBox_Popup_Container_InnerContent_Wrapper{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 20px 1fr;
+    border: 2px green;
+    box-sizing: border-box;
+    padding-bottom: 150px;
+    overflow: auto;
+}
+
+.NormalPost_Image_Copy{
+    overflow: hidden;
+    box-shadow: 0px 0px 2px rgb(78, 78, 78);
+    background-color: gray;
+}
+.NormalPost_Image_Copy img{
+    height: 100%;
+    width: auto;
+    object-fit: fill;
+}
+
+.Remove_User_Profile_MessageBox_Popup_RemoveDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Remove_User_Profile_MessageBox_Popup_RemoveDiv button{
+    width: 100%;
+    padding: 2px;
+    border: none;
+    background-color: rgb(255, 211, 211);
+    color: orangered;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(225, 225, 225, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 2px rgb(78, 78, 78);
+}
+.Remove_User_Profile_MessageBox_Popup_RemoveDiv button:focus{
+    outline: 0;
+}
+.NormalPost_CommentBox_Inner_Container_CommentDive{
+    box-shadow: 0px 0px 2px rgb(78, 78, 78);
+    display: grid;
+    grid-template-rows: 1fr 40px;
+    overflow: auto;
+}
+.posts_Comments_Display_section{
+    height: 100%;
+    overflow: auto;
+}
+
+/* <!-- ..............* Create Comments Or Replyes *.............. --> */
+.User_Normal_Posts_Comment_From form{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: rgba(182, 237, 249, 0.42);
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+}
+
+.User_Normal_Posts_Comment_From form textarea{
+  width: 80%;
+  height: 25px;
+  border: none;
+  margin-right: 5px;
+  font-size: 16px;
+  font-style: oblique;
+  color: #159AC4;
+  padding: 3px 0px;
+  background: transparent;
+  resize: none;
+  display: block;
+  border-bottom: 3px solid rgb(54, 255, 54);
+  min-height: 25px;
+}
+.User_Normal_Posts_Comment_From form textarea::-webkit-scrollbar{
+  display: none;
+}
+.User_Normal_Posts_Comment_From form textarea:focus{
+  outline: 0;;
+  border-bottom: 3px solid green;
+  transition: 1s;
+}
+.User_Normal_Posts_Comment_From form button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.User_Normal_Posts_Comment_From form button:focus{
+    outline: 0;
+}
+.User_Normal_Posts_Comment_From form button img{
+    height: 24px;
+    width: 24px;
+}
+
+@media only screen and (max-width: 520px){
+    /* ~~~~~~#~~~~~~~#~~~~~~~#[ This is Post PopUp Container ]#~~~~~~#~~~~~#~~~~~~#~~~~~~ */
+    .User_Profile_MessageBox_Popup_Container{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        padding: 0px;
+    }
+    .User_Profile_MessageBox_Popup_Container_InnerContent_Wrapper{
+        padding-bottom: 130px;
+    }
+
+    .NormalPost_Image_Copy{
+        box-shadow: none;
+    }
+    .Remove_User_Profile_MessageBox_Popup_RemoveDiv button{
+        box-shadow: none;
+    }
+    .NormalPost_CommentBox_Inner_Container_CommentDive{
+        box-shadow: none;
+    }
+}

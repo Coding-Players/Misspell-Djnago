@@ -1,0 +1,139 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/normalProfile/profileUpdate.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/ServiceProvider_Profile/ServiceProvider_Profile_Update_form.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block HomeContent %}
+
+<!-- =========:~~~~~:==========[ Hole Form Page Holder ]=========:~~~~~:========== -->
+    <div class="All_Profile_From_Base_Container">
+
+        <div class="Basic_From_Holder">
+            <!-- ===========================[ Form Overhed Link Section ]=========================== -->
+            <div class="All_From_links">
+                <div class="All_From_links_list">
+                    <a href="{% url 'UserProfile' user.id %}">
+                        <div class="Account_Creation_Link_With_Icon">
+                            <div class="Account_Creation_Link_Icon">
+                                <img src="{% static 'Images/IconsForHome/return.svg' %}" alt="Back Icon">
+                            </div>
+                            Cancel
+                        </div>
+                    </a>
+                </div>
+                <div class="All_From_links_list">
+                    <a href="{% url 'Distributor_Profile_Update' user.id %}">
+                        <div class="Account_Creation_Link_With_Icon">
+                            <div class="Account_Creation_Link_Icon">
+                                <img src="{% static 'Images/FromsIcon/DistProfile.png' %}" alt="Create Distributor Profile Icon">
+                            </div>
+                            Create Distri-butor Profile
+                        </div>
+                    </a>
+                </div>
+                <div class="All_From_links_list">
+                    <a href="{% url 'NormalProfileUpdate' user.id %}">
+                        <div class="Account_Creation_Link_With_Icon">
+                            <div class="Account_Creation_Link_Icon">
+                                <img src="{% static 'Images/IconsForHome/entrepreneur.svg' %}" alt="Normal Profile Icon">
+                            </div>
+                            Profile Update
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ===========================[ Which Form Description ]=========================== -->
+            <div class="From_Type_is">
+                Create Your Service Provider Profile
+            </div>
+            <!-- ===========================[ This is Normal Profile Update Form ]=========================== -->
+            <div class="Main_From_Container">
+                <form method="post" action="{% url 'ServiceProvider_Profile_Update' user.id %}"  enctype="multipart/form-data" id="serviceproviderprofile_form">
+                {% csrf_token %}
+
+                    <!-- :~~~~~~~~~~~~~~~:[ Form First Section ]:~~~~~~~~~~~~~~~:-->
+                    <div class="Main_From_Container_Form_first" id="Main_From_Container_Form_first">
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_SerV_name">Enter Your Full Name<em>*</em></label>
+                            <input type="text" name="SerV_name" value="{{ form.SerV_name.value }}" maxlength="50" required="" id="id_SerV_name">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_SerV_birth_date">Enter Your Date Of Birth:</label>
+                            <input type="date" name="SerV_birth_date" value="{{ form.SerV_birth_date.value }}" required="" id="id_SerV_birth_date">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_SerV_age">Enter Your Age:</label>
+                            <input type="number" name="SerV_age" value="{{ form.SerV_age.value }}" required="" id="id_SerV_age">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_SerV_address">Set Your Address:</label>
+                            <input type="text" name="SerV_address" value="{{ form.SerV_address.value }}" maxlength="255" required="" id="id_SerV_address">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label for="id_SerV_phone_no">Enter Phone No.:</label>
+                            <input type="text" name="SerV_phone_no" maxlength="15" value="{{ form.SerV_phone_no.value }}"  required="" id="id_SerV_phone_no">
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first">
+                            <label>Chose Your Gender:</label>
+                            {{ form.SerV_gender }}
+                        </div>
+
+                        <div class="BasicFrom_InPut_Submit_first NextSection_Of_Form">
+                            <div id="NextSection_Of_Form_InnerContainer">
+                                <a href="#">Next</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- :~~~~~~~~~~~~~~~:[ Form Second Section ]:~~~~~~~~~~~~~~~:-->
+                    <div class="Main_From_Container_Form_second Main_From_Container_Form_second_Hide" id="Main_From_Container_Form_second">
+
+                        <!-- User Profile Picture -->
+                        <div class="BasicFrom_InPut_Submit_Profile_Picture">
+
+
+                            <div class="SerV_Profile_image_preview" id="SerV_Profile_image_Preview">
+                                <img src=" " class="SerV_Profile_image_preview__image">
+                                <span class="SerV_Profile_image_preview_default_text">Profile Image PreView</span>
+                            </div>
+
+                            <input type="file" name="SerV_Profile_pick" accept="image/*" id="id_SerV_Profile_pick">
+
+                            <label for="id_SerV_Profile_pick">
+                                <img src="{% static 'Images/IconForPosts/folderIcon.svg' %}" alt="file Icon">
+                                Chose Profile Picture:
+                            </label>
+                        </div>
+
+
+                        <div class="BasicFrom_InPut_Submit_first BasicFrom_InPut_Submit">
+                            <button type="submit">Submit</button>
+                        </div>
+
+                        <!-- Main_From_Container_Form_second_Hide -->
+                        <div class="PreviousSection_Of_Form">
+                            <div id="PreviousSection_Of_Form_InnerContainer">
+                                <a href="#">Previous</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{% static 'js/ServiceProvider_Profile/ServiceProvider_Profile_Update_form.js' %}" async defer></script>
+{% endblock %}

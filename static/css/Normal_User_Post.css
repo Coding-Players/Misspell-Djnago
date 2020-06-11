@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Post_form_holder{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    overflow: auto;
+    padding-bottom: 55px;
+}
+.Post_form_holder form{
+    width: 300px;
+    height: auto;
+    box-shadow: 0 0 5px #f00;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.Input-PostTitle{
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #dfdfdf;
+    color: #fff;
+}
+.Input-PostTitle input{
+    width: 296px;
+    border: 2px solid cyan;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: blue;
+    padding-top: 5px;
+}
+.image-preview{
+    width: 300px;
+    min-height: 150px;
+    border: none;
+    background-color: #dfdfdf;
+
+    /* Default text  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+#id_post_pick{
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0;
+}
+
+.Post-Message{
+    width: 100%;
+    height: 190px;
+    background-color: #dfdfdf;
+    display: flex;
+    justify-content: space-around;
+}
+.Post-Message textarea{
+    width: 2960px;
+    height: 170px;
+    padding: 5px 0;
+    border: 2px solid cyan;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    resize: none;
+}
+.Submit-Post{
+    width: 100%;
+    height: 40px;
+    background-color: #dfdfdf;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+.Submit-Post input{
+    height: 30px;
+    padding: 5px 0;
+    width: 120px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 5px green;
+    background-color: rgba(51,255,0,0.2);
+    color: #0f0;
+    cursor: pointer;
+    text-shadow: 1px 1px 3px #333;
+}
+.Submit-Post button{
+    height: 30px;
+    padding: 5px 0;
+    width: 120px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 5px red;
+    background-color: rgba(255,0,51,0.2);
+    color: #f00;
+    cursor: pointer;
+    text-shadow: 1px 1px 3px #333;
+}

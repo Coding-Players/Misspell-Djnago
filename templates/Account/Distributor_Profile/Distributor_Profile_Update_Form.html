@@ -1,0 +1,97 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/normalProfile/NormalProfileUpdate.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block HomeContent %}
+<h5>Create Your Distributor Profile</h5><hr>
+    <div class="Basic_From_Holder" style="overflow: auto; height: 100%;">
+        <div class="All_From_links">
+            <div class="All_From_links_list">
+                <a href="{% url 'UserProfile' user.id %}">
+                    <div class="Account_Creation_Link_With_Icon">
+                        <div class="Account_Creation_Link_Icon">
+                            <img src="{% static 'Images/FromsIcon/undo.svg' %}" alt="Back Icon">
+                        </div>
+                        Back
+                    </div>
+                </a>
+            </div>
+            <div class="All_From_links_list">
+                <a href="{% url 'ServiceProvider_Profile_Update' user.id %}">
+                    <div class="Account_Creation_Link_With_Icon">
+                        <div class="Account_Creation_Link_Icon">
+                            <img src="{% static 'Images/FromsIcon/service.svg' %}" alt="Create Service Provider Profile Icon">
+                        </div>
+                        Create Service Provider Profile
+                    </div>
+                </a>
+            </div>
+            <div class="All_From_links_list">
+                <a href="{% url 'NormalProfileUpdate' user.id %}">
+                    <div class="Account_Creation_Link_With_Icon">
+                        <div class="Account_Creation_Link_Icon">
+                            <img src="{% static 'Images/IconsForHome/entrepreneur.svg' %}" alt="Normal Profile Icon">
+                        </div>
+                        Profile Update
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- ===========================[ This is Normal Profile Update Form ]=========================== -->
+        <div class="Main_From_Container">
+            <form method="post" >
+                {% csrf_token %}
+
+                <div class="Main_From_Container_Form">
+                    <div class="BasicFrom_InPut_Submit">
+                        <label for="id_DisB_name">Enter Your Full Name:</label>
+                        <input type="text" name="DisB_name" maxlength="50" required="" id="id_DisB_name">
+                    </div>
+
+                    <div class="BasicFrom_InPut_Submit">
+                        <label for="id_DisB_birth_date">Enter Your Date Of Birth:</label>
+                        <input type="date" name="DisB_birth_date" required="" id="id_DisB_birth_date">
+                    </div>
+
+                    <div class="BasicFrom_InPut_Submit">
+                        <label for="id_DisB_address">Enter Your Address:</label>
+                        <input type="text" name="DisB_address" maxlength="255" required="" id="id_DisB_address">
+                    </div>
+
+                    <div class="BasicFrom_InPut_Submit">
+                        <label for="id_DisB_phone_no">Enter Your Phone No.:</label>
+                        <input type="text" name="DisB_phone_no" maxlength="15" required="" id="id_DisB_phone_no">
+                    </div>
+
+                    <div class="BasicFrom_InPut_Submit">
+                        <label for="id_DisB_gender">Chose Your Gender:</label>
+                         <select name="DisB_gender" id="id_DisB_gender">
+                              <option value="Male" selected="">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="TransGen">TransGen</option>
+                         </select>
+                    </div>
+
+                    <div class="BasicFrom_InPut_Submit">
+                        <label for="id_DisB_Profile_pick">Upload Your Picture:</label>
+                        <input type="file" name="DisB_Profile_pick" accept="image/*" id="id_DisB_Profile_pick">
+                    </div>
+
+                    <div class="BasicFrom_InPut_Submit">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script src="{% static 'js/normalProfile/ProfileUpdateForm.js' %}" async defer></script>
+{% endblock %}

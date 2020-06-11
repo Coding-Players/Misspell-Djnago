@@ -1,0 +1,345 @@
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~
+    This is Main Profile Container
+~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~  */
+
+.User_Profile_Profile_Base_Container{
+    min-height: 310px;
+    height: auto;
+    max-height: 100%;
+    overflow: auto;
+    box-shadow: 0px 0px 2px rgb(78, 78, 78);
+    padding-bottom: 150px;
+  }
+  /*----*** STYLING OF SCROLL BUTTON ***------*/
+  .User_Profile_Profile_Base_Container::-webkit-scrollbar{
+    display: none;
+  }
+  /* __________________[ Profile Section ]__________________  */
+  .User_Profile_Holder_Container{
+    height: 240px;
+    width: 100%;
+    /* background-color: yellow; */
+  }
+  /* ``````````````````````[ Profile Background Containt Container ]`````````````````````` */
+  .Profile_BackGround_Containt_Holder{
+    height: 150px;
+  }
+  /* <!-- [ User Name & Status Section ] --> */
+  .Profile_User_Name_And_Status_Holder{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background: rgba(37, 37, 39, 0.6);
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    font-variant: small-caps;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .Profile_User_Name_And_Status_Holder em{
+    font-weight: bold;
+    font-size: 14px;
+    height: 20px;
+  }
+  /* <!-- [ User Profile Background Image ] --> */
+  .Profile_User_Background_PickTure{
+    height: 155px;
+    /* background-color: blueviolet; */
+    transform: translateY(-40px);
+    z-index: -1;
+  }
+  .Profile_User_Background_PickTure img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  /* ``````````````````````[ Profile Front Containt Container ]`````````````````````` */
+  .Profile_FontGround_Containt_Holder{
+    height: 180px;
+    /* border: 1px solid cyan; */
+    transform: translateY(-90px);
+    box-sizing: border-box;
+  }
+
+  /* <!-- [ Profile Front Containt First Container Or Circular Icon Holder ] --> */
+  .Font_Content_Container1{
+    display: grid;
+    grid-template-columns: 45px 45px 45px;
+    justify-content: center;
+    height: 40px;
+    /* background-color: darkcyan; */
+    grid-gap: 6px;
+  }
+  .User_Profile_Circular_Icon_Holder{
+    display: flex;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(27, 27, 31, 0.5);
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* <!-- First Circular Icon Holder --> */
+  .User_Profile_Circular_Icon_Holder1{
+    transform: translateY(20px);
+  }
+
+  /* <!-- Third Circular Icon Holder --> */
+  .User_Profile_Circular_Icon_Holder3{
+    transform: translateY(20px);
+  }
+
+  /* <!-- [ Profile Front Containt Second Container Or Profile Picture Holder ] --> */
+  .Font_Content_Container2{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 60px 90px 60px;
+    height: 110px;
+    /* background-color: rgba(197, 53, 241, 0.87); */
+    grid-gap: 6px;
+  }
+  .User_Profile_Image_Holder{
+    border-radius: 50%;
+    background: rgba(27, 27, 31, 0.5);
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 2px #159AC3;
+    cursor: pointer;
+  }
+
+  /* <!-- [ Service Provider Profile Picter ] --> */
+  .User_Profile_Image_Holder1{
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+  .User_Profile_Image_Holder1 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* <!-- [ Normal Profile Picter ] --> */
+  .User_Profile_Image_Holder2{
+    height: 90px;
+    margin-top: 10px;
+  }
+  .User_Profile_Image_Holder2 img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  /* <!-- [ Distributor Profile Picter ] --> */
+  .User_Profile_Image_Holder3{
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+  .User_Profile_Image_Holder3 img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .Servide_Provider_Profile_Image_Text{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 10px;
+    font-style: oblique;
+    font-weight: bold;
+    padding: 3px 2px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateY(-60px);
+    border: 1px solid greenyellow;
+    opacity: 0;
+  }
+  .Servide_Provider_Profile_Image_Text:hover{
+    opacity: 1;
+  }
+
+  /* <!-- [ Profile Front Containt Third Container Or Profile/Account Update and More Details Link ] --> */
+  .Font_Content_Container3{
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 2.5fr;
+    height: 25px;
+    /* background-color: rgba(202, 173, 44, 0.938); */
+    grid-gap: 10px;
+    padding: 0px 5px;
+    cursor: pointer;
+  }
+  .User_Profile_Update_Details_Link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #159AC4;
+    border: 1px solid #159AC3;
+    box-sizing: border-box;
+    filter: blur(0.5px);
+    border-radius: 15px;
+    overflow: hidden;
+    font-size: 12px;
+    font-style: oblique;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .User_Profile_Update_Details_Link a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #159AC4;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  /* __________________[ Profile Details Section ]__________________  */
+  .User_Profile_Deatis_Holder_Container{
+    display: grid;
+    height: auto;
+    max-height: 250px;
+    padding: 5px;
+    background: rgba(182, 237, 249, 0.42);
+    color: #159AC4;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  /* <!-- ............[ User More Details Holder ]............ --> */
+  .User_Profile_UserMore_Details{
+    display: block;
+  }
+  .User_Profile_UserMore_Details ul li{
+    list-style-type: none;
+  }
+
+  /* <!-- __________________[ Profile Important Link & Basic Details Section ]__________________ --> */
+  .User_Profile_ImprotantLink_Holder_Container{
+    height: 80px;
+  }
+
+  /* <!-- [ Profile Basic Details Section ] --> */
+  .User_Profile_Basic_Details_Container{
+    height: 25px;
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    color: #fff;
+    padding: 0px 5px;
+    font-size: 14px;
+    overflow: auto;
+    font-variant: small-caps;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* <!-- ......................[ Profile Important Link Section ]...................... --> */
+  .User_Profile_ImportantLink_Container{
+    height: 50px;
+    color: #fff;
+    overflow: auto;
+    align-items: center;
+  }
+  /*----*** STYLING OF SCROLL BUTTON ***------*/
+  .User_Profile_ImportantLink_Container::-webkit-scrollbar{
+    height: 5px;
+    cursor: pointer;
+  }
+  .User_Profile_ImportantLink_Container::-webkit-scrollbar-track{
+    background: rgb(102, 24, 117);
+    border-radius: 2.5px;
+  }
+  .User_Profile_ImportantLink_Container::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, red, yellow);
+    border-radius: 2.5px;
+  }
+
+  .User_Profile_ImportantLink_Container ul{
+    display: flex;
+    white-space: nowrap;
+  }
+  .User_Profile_ImportantLink_Container ul li{
+    list-style: none;
+    margin-right: 5px;
+  }
+  .User_Profile_ImportantLink_Container ul li a{
+    display: flex;
+    height: 35px;
+    align-items: center;
+    padding: 5px;
+    text-decoration: none;
+    color: #159AC4;
+    font-size: 12px;
+    font-style: oblique;
+    font-weight: bold;
+  }
+  .User_Profile_ImportantLink_Container ul li a:hover{
+    background: rgba(37, 37, 39, 0.6);
+    color: #fff;
+  }
+  .User_Profile_ImportantLink_Icon{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background: rgba(14, 163, 246, 0.5);
+    border: 1px solid #5BE0FD;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*[ Making This Profile Section Responsive ] */
+
+  @media only screen and (max-width: 580px){
+
+    /* This is Main Profile Container  */
+    .User_Profile_Profile_Base_Container{
+        min-height: 310px;
+        max-height: 100%;
+        padding-bottom: 0px;
+    }
+     /* __________________[ Profile Details Section ]__________________  */
+    .User_Profile_Deatis_Holder_Container_Hide{
+        display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 480px){
+    .User_Profile_ImprotantLink_Holder_Container{
+        height: 70px;
+    }
+    /* Profile Important Link Container  */
+    .User_Profile_ImportantLink_Container{
+        height: 45px;
+        color: #fff;
+        overflow: auto;
+        align-items: center;
+    }
+    /*----*** STYLING OF SCROLL BUTTON ***------*/
+    .User_Profile_ImportantLink_Container::-webkit-scrollbar{
+        display: none;
+    }
+
+  }
+
+  /* Spacial Ccasses  */
+  @media only screen and (min-width: 580px){
+    .User_Profile_More_Details_Link{
+        opacity: 0;
+    }
+  }

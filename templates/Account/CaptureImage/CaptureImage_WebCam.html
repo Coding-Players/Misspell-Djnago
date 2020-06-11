@@ -1,0 +1,95 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/CaptureImage/CaptureImage_WebCam.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block Dynamic_Container %}
+<!-- ===========[ Full Image Captureing Page container ]=========== -->
+<div id="ImageCapture_Page">
+
+    <!-- :~~~~~~~~~~:[ Inner Content Holder Container ]:~~~~~~~~~~: -->
+    <div id="ImageCapture_Page_Inner_Container" class="">
+
+        <!----------*-----[ This is Heading Container Or Header ]-----*---------->
+        <div class="ImageCapture_Page_Heading">
+            Capture Your Image
+        </div>
+
+        <!-- :~~~~*~~~~~~:[ This is Streaming Holder Container ]:~~~~*~~~~~~: -->
+        <div class="Image_Previewing_Section">
+
+            <!-- This section Streaming the video -->
+            <div class="VideoStreaming_Section" id="Video_Showing_Container">
+                <video id="stream"></video>
+            </div>
+
+            <!-- display Capture Image -->
+            <div class="Image_Previe_List"  id="Image_Showing_Container">
+                <canvas width="420" height="280" id="capture"></canvas>
+            </div>
+        </div>
+
+        <!-- Capturing Button Section -->
+        <div class="Captureing_Button_Section" id="Capture_Button_Holder">
+            <button id="btn-capture" type="button" class="button">Capture Image</button>
+            <button id="btn-try-again" type="button" class="button Hide_This">Try Again</button>
+        </div>
+
+        <!-- Where to Use this Picture -->
+        <div class="Where_To_Use_This_Picture Hide_This" id="Where_To_Use_This_Picture">
+
+            <form action="{% url 'Capture_Your_Image' %}" id="Profile_Picture_Changing_Form" class="Submition_Form">
+                {% csrf_token %}
+                <button type="submit" class="button">Set As Profile Picture</button>
+            </form>
+
+            <button type="button" id="Create_Post_Target" class="button">Create As Post</button>
+        </div>
+
+        <!-- Cancel Section Container -->
+        <div class="Captureing_Cancel_Container">
+            <a href="{% url 'UserProfile' user.id %}">Return</a>
+        </div>
+
+    </div>
+
+    <!-- :~~~~~~~~~~~~~~~:~~~~~~~~~~~~:[ Post Create Page ]:~~~~~~~~~~~~~~~:~~~~~~~~~~~~: -->
+        <div id="Post_Create_Page" class="Hide_This">
+            <form action="{% url 'Capture_Create_Normal_Post' %}" id="Capture_Normal_Post_Create_Form">
+                <div class="Basic_ProstCreate_Input_Holder">
+                    <div class="Basic_ProstCreate_Input">
+                        <label for="id_subject">Post Subject:</label>
+                        <input type="text" name="subject" maxlength="75" required="" id="id_subject"
+                            placeholder="Enter Your Post Subject...">
+                    </div>
+
+                    <div class="Basic_ProstCreate_Input" id="Post_Pick_Lable_Selector">
+                        <div class="UserPost_image_preview" id="UserPost_image_Preview">
+                        </div>
+                    </div>
+
+                    <div class="Basic_ProstCreate_Input">
+                        <button type="submit" class="Basic_ProstCreate_Input_Submit_Button">Submit</button>
+                    </div>
+
+                    <div class="Basic_ProstCreate_Input">
+                        <button type="button" class="Basic_ProstCreate_Input_Cancel_Button">
+                            <a href="#" id="Previous_Page_Target">Return</a>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+</div>
+
+{% endblock %}
+
+<!--==========================[This is Javascript Section ]==========================-->
+{% block javascript %}
+    <script src="{% static 'js/CaptureImage/CaptureImage_WebCam.js' %}" async defer></script>
+{% endblock %}

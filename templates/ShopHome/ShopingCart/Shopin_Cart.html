@@ -1,0 +1,63 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/ShopHome/ShopingCart/Shopin_Cart.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block HomeContent %}
+        <div class="Products_Cart_Page_Holder">
+
+            <div>
+                {% for item in items %}
+                <div class="Products_Cart_List_Item_Container">
+                    <div class="Cart_List_Items_">
+                        <div class="Cart_List_Items_Inner_Content">
+                            <div class="Cart_List_Items_Inner_Content_ProductImage">
+                                <img src="{{ item.product.prod_picture.url }}" alt="">
+                            </div>
+                        </div>
+                        <div class="Cart_List_Items_Inner_Content ">Item: <em>{{ item.product.prod_name }}</em></div>
+                        <div class="Cart_List_Items_Inner_Content">Price:<br><em>Rs.{{ item.product.prod_price }}</em></div>
+                        <div class="Cart_List_Items_Inner_Content Cart_List_Items_Inner_Content_Quantity">Quantity:<br>
+                            <input type="number" name="NumberOfProduct" value="{{ item.quantity }}">
+                            <select name="Quantity_Type">
+                                <option value="{{ item.product.in_terms_of }}" selected>{{ item.product.in_terms_of }}</option>
+                            </select>
+                        </div>
+                        <div class="Cart_List_Items_Inner_Content Cart_List_Items_Inner_Content_Total">Total:<em>Rs.{{ item.get_total }}</em></div>
+                        <div class="Cart_List_Items_Inner_Content Cart_List_Items_Inner_Content_Remove">
+                            Remove
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="Products_Cart_List_Item_Total_Container_Final">
+
+                <div class="Products_Cart_List_Item_Total_Container_Final_innerContent">Number Of Items: <em>{{ order.get_cart_item }}</em></div>
+
+                <div class="Products_Cart_List_Item_Total_Container_Final_innerContent">Total Price: <em>Rs.{{ order.get_cart_total }}</em></div>
+
+                <div class="Products_Cart_List_Item_Total_Container_Final_innerContent_CheckOut">
+                    <a href="#" class="CheckOut_Prods">Buy Confirm</a>
+                    <a href="{% url 'ShopHome' %}" class="CheckOut_Shoping_continue">
+                        Continue Shopping
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+{% endblock %}
+
+{% block javascript %}
+{% load static %}
+
+    <script src="" async defer></script>
+{% endblock %}

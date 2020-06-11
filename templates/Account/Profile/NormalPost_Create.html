@@ -1,0 +1,54 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/normalProfile/NormalPost_Create.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block HomeContent %}
+    <div class="PostCreateFrom_Manin_Container">
+        <div class="PostCrateFrom_Holder">
+            <form  method="post" action="{% url 'Normal_Post_create' request.user.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="Basic_ProstCreate_Input_Holder">
+                    <div class="Basic_ProstCreate_Input">
+                        <label for="id_subject">Post Subject:</label>
+                        <input type="text" name="subject" maxlength="75" required="" id="id_subject" placeholder="Enter Your Post Subject...">
+                    </div>
+
+                    <div class="Basic_ProstCreate_Input" id="Post_Pick_Lable_Selector">
+
+                        <div class="UserPost_image_preview" id="UserPost_image_Preview">
+                            <img src="" alt="Image Preview" class="UserPost_image_preview__image">
+                            <span class="UserPost_image_preview_default_text">Image PreView</span>
+                        </div>
+                        <input type="file" name="post_pick" accept="image/*" required="" id="id_post_pick">
+
+                        <label for="id_post_pick">
+                            <img src="{% static 'Images/IconForPosts/folderIcon.svg' %}" alt="file Icon">
+                            Choose A Picture, required.
+                        </label>
+                    </div>
+
+                    <div class="Basic_ProstCreate_Input">
+                        <label for="id_msg">Text Your Message Below:</label>
+                        <textarea name="msg" cols="40" rows="10" id="id_msg"></textarea>
+                    </div>
+
+                    <div class="Basic_ProstCreate_Input">
+                        <button type="submit" class="Basic_ProstCreate_Input_Submit_Button">Submit</button>
+                    </div>
+
+                    <div class="Basic_ProstCreate_Input">
+                        <button type="button"  class="Basic_ProstCreate_Input_Cancel_Button">
+                            <a href="{% url 'UserProfile' request.user.id %}">Cancel</a>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js\normalProfile\NormalPost_Create.js' %}" async defer></script>
+{% endblock %}

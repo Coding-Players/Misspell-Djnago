@@ -1,0 +1,105 @@
+
+/* ************[ This Is Message Box Display Container ]************ */
+.Chat_Box_Dispaly_Container{
+    display: block;
+    padding: 0px 8px;
+    font-size: 12px;
+    font-variant-ligatures: contextual;
+    overflow: auto;
+}
+.Chat_Box_Dispaly_Container::-webkit-scrollbar{
+    display: none;
+}
+
+/* This is Reply Comment Section  */
+.User_Message_Shower_Rapper{
+    min-width: 60%;
+    max-width: 80%;
+    height: auto;
+    background-color: rgb(255, 237, 203);
+    color: orange;
+    margin: 5px 0px;
+    border-radius: 10px;
+    padding: 5px;
+    float: left;
+}
+.User_Message_Shower_Details{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    font-size: 10px;
+    background-color: transparent;
+}
+.User_Message_Shower_Details a{
+    padding: 0px 2px;
+}
+.User_Message_Shower_Details img{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 0.25px solid red;
+    box-sizing: border-box;
+    background-color: gray;
+    overflow: hidden;
+}
+.User_Message_Shower_Text{
+    background-color: transparent;
+}
+.User_Message_Shower_Details::before {
+    content: "";
+    position: relative;
+    height: 10px;
+    width: 10px;
+    background-color: rgb(255, 237, 203);
+    margin-left: -10px;
+    margin-top: 5px;
+    transform: rotate(45deg);
+}
+/* Normal User Message Section  */
+.Reply_Message_Shower_Rapper{
+    position: relative;
+    min-width: 60%;
+    max-width: 80%;
+    height: auto;
+    background-color: rgb(227, 253, 197);
+    color: rgb(24, 190, 49);
+    margin: 5px 0px;
+    border-radius: 10px;
+    padding: 5px;
+    float: right;
+    text-align: right;
+}
+
+.Reply_Message_Shower_Details{
+    text-align: right;
+    transform: translateY(-10px);
+    font-size: 10px;
+    height: 20px;
+    background-color: transparent;
+}
+.Reply_Message_Shower_Details a{
+    align-items: right;
+}
+.Reply_Message_Shower_Details img{
+    transform: translateY(10px);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 0.25px solid red;
+    box-sizing: border-box;
+    background-color: gray;
+    margin-right: 5px;
+}
+.Reply_Message_Shower_Details::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: rgb(227, 253, 197);
+    margin-right: -10px;
+    margin-top: 15px;
+    transform: rotate(45deg);
+}
+.Reply_Message_Shower_Text{
+    background-color: transparent;
+}

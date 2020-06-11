@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thi is Test Page</title>
+</head>
+<body>
+
+<h1>This is Test Page:</h1>
+    <div class="User_Besic_content User_Name_Container">
+        Name: {{ user.normalprofile.name }}<br>
+        Age: {{ user.normalprofile.age }}<br>
+        Address: {{ user.normalprofile.ddress }}<br>
+        Status: {{ user.normalprofile.status }}<br>
+        Phone No.: {{ user.normalprofile.phone_no }}<br>
+        About: {{ user.normalprofile.description }}<br>
+        Gender: {{ user.normalprofile.gender }}<br>
+        <img src="/media/{{ user.normalprofile.profile_pick }}"><br>
+        <img src="/media/{{ user.normalprofile.profile_Background_pic }}"><br>
+    </div><br><br><br>
+
+    <div class="User_Besic_content User_Name_Container">
+        Name: {{ user.serviceproviderprofile.SerV_name }}<br>
+        Age: {{ user.normalprofile.age }}<br>
+        Address: {{ user.normalprofile.ddress }}<br>
+        <img src="/media/{{ user.serviceproviderprofile.SerV_Profile_pick }}"><br>
+    </div>
+<div>
+    {% for post in normal_post_lists %}
+                <div class="User_Post_Holder">
+
+                    <!-- Define User and TimeStamp -->
+                    <div class="User_Post_Holder_Content_Header">
+                        <div class="User_Post_Holder_Content_Header_Name">
+                            Name: {{ post.uploded_by }}
+                        </div>
+                        <div class="User_Post_Holder_Content_Header_Time">
+                            Date: {{ post.creat_date }}
+                        </div>
+                    </div>
+
+                    <!-- User Profile Pick and Post Description -->
+                    <div class="User_Post_Holder_Content_Navigation">
+                        <div class="User_Post_Holder_Content_Navigation_Image">
+                            <img src="/media/{{ post.uploded_by.profile_pick }}" alt='*'>
+                        </div>
+                        <div class="User_Post_Holder_Content_Navigation_Description">
+                            Description: {{ post.subject }}
+                        </div>
+                    </div>
+
+                    <!-- Post Image Container -->
+                    <div class="User_Post_Holder_Contentr_Body">
+                        <img src="/media/{{ post.post_pick  }}" alt="post img">
+                    </div>
+
+                    <!-- Post Like, Comment, Shere And Flag Section -->
+                    <div class="User_Post_Holder_Content_Footer">
+                        <div class="User_Post_Holder_Content_Like">Like: 888
+                            <a href="#">
+                                <img src="{% static 'Images/IconForPosts/LikeIcon.svg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="User_Post_Holder_Content_Comments">Comments:999
+                            <div class="OnClick_Comments_Button ToggleUp_Comment_Box_By_Clicking">
+                                <img src="{% static 'Images/IconForPosts/comment.svg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="User_Post_Holder_Content_Shere">Shere
+                            <div class="Shere_Post_Icon">
+                                <img src="{% static 'Images/IconForPosts/Share3.svg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="User_Post_Holder_Content_Flag">
+                            <a href="#">...</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+</div>
+</body>
+</html>

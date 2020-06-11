@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Signup-Rapper{
+    font-family: 'Roboto', sans-serif;
+    width: 98%;
+    height: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Theis Part is the container of signup form  */
+#SignupFrom-container{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    max-width: 40rem;
+    background-color: #fff;
+    position: relative;
+    padding: 8rem 0;
+    box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    z-index: 1;
+}
+#SignupFrom-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 14rem;
+    background: linear-gradient(to left, #fc6767, #ec008c);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 0;
+    z-index: -1;
+}
+#SignupFrom-container::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 14rem;
+    background: linear-gradient(to left, #2fdb20, #e7f33e);
+    border-top-left-radius: 0;
+    border-top-right-radius: 90%;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    z-index: -2;
+}
+
+/* This are other requirements for both login and signup form  */
+.SignupFrom-Heding{
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    top: 2.5rem;
+    left: 30%;
+    text-shadow: 0 1px 0.5rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+form{
+    transform: translateY(-10%);
+    background-color: transparent;
+    border-radius: 1rem;
+}
+.SignupInpu-group{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+}
+.SignupInpu-group input{
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+    color: #121213;
+}
+.SignupInpu-group .SignUp-bar{ /* That is for SignUp */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 1px;
+}
+.SignupInpu-group .LogIn-bar{ /* This is for LogIn  */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 1px;
+}
+.SignupInpu-group .SignUp-bar::before{/* That is for SignUp */
+    content: '';
+    position: absolute;
+    background-color: cyan;
+    width: 0;
+    height: 2px;
+    transition: width 0.8s;
+}
+
+.SignupInpu-group input:focus + .SignUp-bar::before{
+    width: 100%;
+}
+.SignupInpu-group input:focus + .LogIn-bar::before{/* This is for LogIn  */
+    width: 100%;
+}
+.SignupInpu-group button{
+    margin: 2rem auto;
+    padding: 0 2rem;
+    background: linear-gradient(to left, #fc6767, #ec008c);
+    border: none;
+    cursor: pointer;
+    border-radius: 3rem;
+    box-shadow: 0px 0px 5px black;
+}
+.SignupInpu-group button:focus,
+.SignupInpu-group button:hover{
+    background: linear-gradient(to right, #fc6767, #ec008c);
+    box-shadow: none;
+}
+/* This protion Style the left icons in this from  */
+.SignUp-IconHolder{
+    height: 2rem;
+    width: 2rem;
+    z-index: 2;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.SignUp-IconSubmit img{
+    height: 2rem;
+    width: 2rem;
+}
+
+/* Below link section  */
+.SignupSwitch-login{
+    text-align: center;
+}
+.Cancel_SignUp{
+    text-align: center;
+    margin-top: 5px;
+}
+.Cancel_SignUp button{
+    padding: 5px;
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgb(255, 67, 105);
+    box-shadow: 0px 0px 5px rgb(206, 13, 13);
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.Cancel_SignUp button:hover{
+    box-shadow: none;
+    background-color: crimson;
+}
+
+@media only screen and (max-width: 350px){
+    .It_is_logInform{
+        transform: translateY(110px);
+    }
+} 
+    /* #SignupFrom-container{
+        transform: translateY(34%);
+        max-height: 80%;
+        position: absolute;
+        font-size: 10px;
+        position: fixed;
+    }
+    #SignupFrom-containe{
+        height: 100%;
+    }
+    #SignupFrom-container::before{
+        margin-top: 70px;
+        width: 100%;
+        height: 10rem;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 0;
+    }
+    #SignupFrom-container::after{
+        height: 10rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 90%;
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        transform: translateY(-10px);
+    }
+    form{
+        transform: translateY(-8%);
+        background-color: transparent;
+        border-radius: 0.25rem;
+    }
+    .SignupFrom-Heding{
+        font-size: 14px;
+        margin-top: 70px;
+        position: absolute;
+        top: 0.25rem;
+        left: 20%;
+    }
+    .SignupInpu-group input{
+        padding: 0;
+        margin-top: 0.5rem;
+        font-size: 10px;
+        font-weight: normal;
+    }
+    .SignUp-IconHolder{
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: 5px;
+    }
+    
+    .SignUp-IconSubmit img{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+@media only screen and (max-width: 239px){
+    #Signup-Rapper{
+        display: none;
+    }
+}  */

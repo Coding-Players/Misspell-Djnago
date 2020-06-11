@@ -1,0 +1,139 @@
+ 
+/* <!-- *************[  User Normal Post Container ]************** --> */
+.User_Profile_Normal_Posts_Cards{
+    display: grid;
+    grid-template-rows: 25px 20px auto 30px;
+    box-shadow: 0px 0px 2px rgb(78, 78, 78);
+    min-height: 350px;
+    max-height: 500px;
+    color: #159AC4;
+  }
+/* ~~~~~~~~~~~~~~~~[ Define User and TimeStamp ]~~~~~~~~~~~~~~~ */
+.User_Post_Holder_Content_Header{
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    padding-top: 3px;
+}
+
+.User_Post_Holder_Content_Header_Name{
+    font-size: 14px;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin-left: 5px;
+    text-align: left;
+}
+.User_Post_Holder_Content_Header_Time{
+    font-size: 10px;
+    text-align: right;
+    margin-right: 5px;
+}
+/* ~~~~~~~~~~~~~~~[ User Profile Pick and Post Description ]~~~~~~~~~~~~~~~ */
+.User_Post_Holder_Content_Navigation{
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    height: 35px;
+    position: relative;
+}
+.User_Post_Holder_Content_Navigation img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 1px;
+    border: 1px solid red;
+    object-fit: cover;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+.User_Post_Holder_Content_Navigation_Description{
+    padding-left: 5px;
+    font-size: 14px;
+    font-style: oblique;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ~~~~~~~~~~~~~~~[ Post Image Container ]~~~~~~~~~~~~~~~ */
+.User_Post_Holder_Contentr_Body{
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    overflow: hidden;
+    background-color: gray;
+}
+.User_Post_Holder_Contentr_Body img{
+    height: 100%;
+    max-width: 420px;
+    object-fit: fill;
+}
+/* ~~~~~~~~~~~~~~~[ Post Like, Comment, Shere And Flag Section ]~~~~~~~~~~~~~~~ */
+.User_Post_Holder_Content_Footer{
+    display: grid;
+    grid-template-columns: 0.9fr 1.25fr 0.75fr 0.25fr;
+    font-size: 12px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+.NormalPost_Link_Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.NormalPost_Link_Container_Image{
+    height: 22px;
+    width: 22px;
+}
+.NormalPost_Link_Container_Image img{
+    height: 100%;
+    width: 100%;
+}
+.User_Post_Holder_Content_Flag{
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+.User_Post_Holder_Content_Flag a{
+    text-decoration: none;
+}
+.NormalPost_Link_Container form{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.NormalPost_Link_Container a{
+    height: 22px;
+    width: 22px;
+}
+.NormalPost_Link_Container a img{
+    height: 100%;
+    width: 100%;
+}
+.NormalPost_Link_Container form button{
+    height: 22px;
+    width: 22px;
+    border: none;
+    background-color: transparent;
+}
+.NormalPost_Link_Container form button img{
+    height: 100%;
+    width: 100%;
+}
+@media only screen and (max-width: 480px){
+    .User_Post_Holder_Content_Header_Name{
+        font-size: 12px;
+    }
+    .User_Post_Holder_Content_Header_Time{
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .User_Post_Holder_Content_Navigation_Description{
+        padding-left: 5px;
+        font-size: 12px;
+        font-style: oblique;
+    }
+
+}
+

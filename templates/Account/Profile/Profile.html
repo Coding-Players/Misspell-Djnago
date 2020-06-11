@@ -1,0 +1,539 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/normalProfile/normalprofile.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/normalProfile/Only_Profile_Style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/normalProfile/NormalPostCard.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/normalProfile/Normal_Post_Comments.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/normalProfile/Confirmation_Message.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/normalProfile/AllUserList.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block HomeContent %}
+    <!-- ==================================================
+                    Full Profile Page Container
+        ================================================== -->
+    <div class="Full_Profile_Page_Container">
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    -: This Section is for Confirmation Message :-
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="Profile_Page_User_Action_Confirmation_Container Profile_Page_User_Action_Confirmation_Container_Hide"
+            id="Profile_Page_User_Action_Confirmation_Container">
+            <!-- Profile_Page_User_Posts_Comment_Container_Hide -->
+
+
+            <!-- =====================[ Profile page Confirmation Card ]===================== -->
+            <div class="Profile_Page_Confirmation_Card">
+                <button class="ProfilePage_Confirmation_NoteSure_Button">I am Not Sure.</button>
+                <button value="" class="ProfilePage_Confirmation_Sure_Button"
+                    id="ProfilePage_Confirmation_Sure_Button">Yes I Want To Delete.</button>
+                <input type="hidden" value="" id="Targeting_FadeOut_Div">
+            </div>
+        </div>
+    </div>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    -: This Section is for User Profile And Posts :-
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="Profile_Page_User_Profile_And_Post_Container">
+
+        <!-- ~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~
+                        Profile Page Fixed Content Container
+                    ~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~ -->
+        <div class="User_Profile_Fixed_Content_Container Container_Two">
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~
+                                This is Main Profile Container
+                    ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="User_Profile_Profile_Base_Container" id="User_Profile_Profile_Base_Container_Hide">
+
+                <!-- __________________[ Profile Section ]__________________ -->
+                <div class="User_Profile_Holder_Container">
+
+                    <!-- ``````````````````````[ Profile Background Containt Container ]`````````````````````` -->
+                    <div class="Profile_BackGround_Containt_Holder">
+                        <!-- [ User Name & Status Section ] -->
+                        <div class="Profile_User_Name_And_Status_Holder"><em>{{ user.normalprofile.name }}
+                            </em><br>{{ user.normalprofile.status }}</div>
+                        <!-- [ User Profile Background Image ] -->
+                        <div class="Profile_User_Background_PickTure">
+                            <img src="{{ user.normalprofile.profile_Background_pic.url }}" alt="Background Image">
+                        </div>
+                    </div>
+                    <!-- ``````````````````````[ Profile Front Containt Container ]`````````````````````` -->
+                    <div class="Profile_FontGround_Containt_Holder">
+
+                        <!-- [ Profile Front Containt First Container Or Circular Icon Holder ] -->
+                        <div class="Font_Content_Container1">
+
+                            <!-- First Circular Icon Holder -->
+                            <div class="User_Profile_Circular_Icon_Holder User_Profile_Circular_Icon_Holder1">
+                                <a href="#">
+                                    <img src="{% static 'Images/IconForProfile/Location.svg' %}" alt="
+                                            Set Location">
+                                </a>
+                            </div>
+                            <!-- Second Circular Icon Holder -->
+                            <div class="User_Profile_Circular_Icon_Holder">
+                                <a href="{% url 'Capture_Your_Image' %}">
+                                    <img src="{% static 'Images/IconForProfile/camera.svg' %}" alt="Take Picture">
+                                </a>
+                            </div>
+                            <!-- Third Circular Icon Holder -->
+                            <div class="User_Profile_Circular_Icon_Holder User_Profile_Circular_Icon_Holder3">
+                                <a href="{% url 'Normal_Post_create' request.user.id %}">
+                                    <img src="{% static 'Images/IconForProfile/picture.svg' %}" alt="Create Post">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- [ Profile Front Containt Second Container Or Profile Picture Holder ] -->
+                        <div class="Font_Content_Container2">
+
+                            <!-- [ Service Provider Profile Picter ] -->
+                            <div class="User_Profile_Image_Holder User_Profile_Image_Holder1">
+                                <img src="{{ user.serviceproviderprofile.SerV_Profile_pick.url }}"
+                                    alt="Service Provider profile pickture">
+                                <div class="Servide_Provider_Profile_Image_Text">
+                                    Service Provider Profile
+                                </div>
+                            </div>
+                            <!-- [ Normal Profile Picter ] -->
+                            <div class="User_Profile_Image_Holder User_Profile_Image_Holder2">
+                                <img src="{{ user.normalprofile.profile_pick.url }}" alt="Normal profile pickture">
+                            </div>
+                            <!-- [ Distributor Profile Picter ] -->
+                            <div class="User_Profile_Image_Holder User_Profile_Image_Holder3">
+                                <img src="{{ user.distributorprofile.DisB_Profile_pick.url }}"
+                                    alt="Distributor profile pickture">
+                                <div class="Servide_Provider_Profile_Image_Text">
+                                    Distibutor Profile
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- [ Profile Front Containt Third Container Or Profile/Account Update and More Details Link ] -->
+                        <div class="Font_Content_Container3">
+
+                            <!-- [ Profile Update Link ] -->
+                            <div class="User_Profile_Update_Details_Link">
+                                <a href="{% url 'NormalProfileUpdate' request.user.id %}">Profile Update</a>
+                            </div>
+                            <!-- [ More Details Link ] -->
+                            <div class="User_Profile_Update_Details_Link User_Profile_More_Details_Link"
+                                id="User_Profile_More_Details_Link">More</div>
+                            <!-- [ Account Update Link ] -->
+                            <div class="User_Profile_Update_Details_Link">
+                                <a href="{% url 'ServiceProvider_Profile_Update' request.user.id %}">Spacial Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- __________________[ Profile Details Section ]__________________ -->
+                <div class="User_Profile_Deatis_Holder_Container User_Profile_Deatis_Holder_Container_Hide"
+                    id="User_Profile_Deatis_Holder_Container_Hide">
+
+                    <!-- ............[ User More Details Holder ]............ -->
+                    <div class="User_Profile_UserMore_Details">
+                        <ul>
+                            <li>Age: {{ user.normalprofile.age }} Years,
+                                Gender: {{ user.normalprofile.gender }},
+                            </li>
+                            <li>
+                                Address: {{ user.normalprofile.address }}
+                            </li>
+                            <li>
+                                About: {{ user.normalprofile.description }}
+                            </li>
+                            <li>
+                                Phone No. : +91-{{ user.normalprofile.phone_no }}
+                            </li>
+                            <li>
+                                Email: madankumar.2020@gmail.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- __________________[ Profile Important Link & Basic Details Section ]__________________ -->
+                <div class="User_Profile_ImprotantLink_Holder_Container">
+                    <!-- [ Profile Basic Details Section ] -->
+                    <div class="User_Profile_Basic_Details_Container">
+                        Followers: 6K+,
+                        Following: 8K+,
+                        Here I am:
+                        <a href="#">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                    <!-- ......................[ Profile Important Link Section ]...................... -->
+                    <div class="User_Profile_ImportantLink_Container">
+                        <ul>
+
+                            <!-- [ Profile Important Link 1 ] -->
+                            <li>
+                                <a href="{% url 'MY_Post' %}">
+                                    <div class="User_Profile_ImportantLink_Icon">
+                                        <img src="{% static 'Images/IconForPosts/allPostOrNote.svg' %}"
+                                            alt="Take Picture">
+                                    </div>
+                                    My Post
+                                </a>
+                            </li>
+
+                            <!-- [ Profile Important Link 2 ] -->
+                            <li>
+                                <a href="{%  url 'UserProfile' user.id %}" id="Show_All_Norma_Posts_list">
+                                    <div class="User_Profile_ImportantLink_Icon">
+                                        <img src="{% static 'Images/IconForPosts/allPostOrNote.svg' %}" alt="">
+                                    </div>
+                                    All Posts
+                                </a>
+                            </li>
+
+                            <!-- [ Profile Important Link 6 ] -->
+                            <li>
+                                <a href="{% url 'All_Users_List' %}" id="Show_All_Users_list">
+                                    <div class="User_Profile_ImportantLink_Icon">
+                                        <img src="{% static 'Images/IconsForHome/AboutUs.svg' %}" alt="Take Picture">
+                                    </div>
+                                    All Users
+                                </a>
+                            </li>
+
+                            <!-- [ Profile Important Link 3 ] -->
+                            <li>
+                                <a href="{% url 'Friends_list' request.user.id %}">
+                                    <div class="User_Profile_ImportantLink_Icon">
+                                        <img src="{%static 'Images/IconsForHome/friendship.svg'%}" alt="">
+                                    </div>
+                                    Friends List
+                                </a>
+                            </li>
+
+                            <!-- [ Profile Important Link 4 ] -->
+                            <li>
+                                <a href="#">
+                                    <div class="User_Profile_ImportantLink_Icon">
+                                        <img src="" alt="">
+                                    </div>
+                                    Un Follow
+                                </a>
+                            </li>
+
+                            <!-- [ Profile Important Link 5 ] -->
+                            <li>
+                                <a href="#">
+                                    <div class="User_Profile_ImportantLink_Icon">
+                                        <img src="" alt="">
+                                    </div>
+                                    All Followers
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~
+                        This Dynamic Section Of User Profile
+                    ~~~~~~*~~~~~~~*~~~~~~~~*~~~~*~~~~~*~~~~~~*~~~~~~ -->
+        <div class="User_Profile_Othere_Dynamic_Content_Container Container_Two"
+            id="User_Profile_Othere_Dynamic_Content_Container_Hide">
+
+            <!-- ~~~~~~#~~~~~~~#~~~~~~~#[ This is Main Posts Container ]#~~~~~~#~~~~~#~~~~~~#~~~~~~ -->
+            <div class="User_profile_Main_Post_Container">
+
+                <!-- *************[ User All Normal Post Container ]************** -->
+                {% for post in normal_post_lists %}
+                <div class="User_Profile_Normal_Posts_Cards">
+                    <!-- Define User and TimeStamp -->
+                    <div class="User_Post_Holder_Content_Header">
+                        <div class="User_Post_Holder_Content_Header_Name">
+                            Name: {{ post.uploded_by }}
+                        </div>
+                        <div class="User_Post_Holder_Content_Header_Time">
+                            {{ post.creat_date }}
+                        </div>
+                    </div>
+
+                    <!-- User Profile Pick and Post Description -->
+                    <div class="User_Post_Holder_Content_Navigation">
+                        <div class="User_Post_Holder_Content_Navigation_Image">
+                            <img src="{{ post.uploded_by.profile_pick.url }}" alt='*'>
+                        </div>
+                        <div class="User_Post_Holder_Content_Navigation_Description">
+                            <!-- :Description: -->
+                            {{ post.subject }}
+                        </div>
+                    </div>
+
+                    <!-- Post Image Container -->
+                    <div class="User_Post_Holder_Contentr_Body">
+                        <img src="{{ post.post_pick.url }}" alt="post img"
+                            id="NormalPost_Image_Triger_CommentBox{{ post.id }}">
+                    </div>
+
+                    <!-- Post Like, Comment, Shere And Flag Section -->
+                    <div class="User_Post_Holder_Content_Footer">
+                        <div class="NormalPost_Link_Container">
+                            <p>Likes:{{ post.likedislike.get_total_like }}</p>
+                            <a href="{% url 'Normal_Post_Like_Dislike' post.id %}"
+                                class="Normal_Post_Like_Dislike_Action"
+                                id="Normal_Post_Like_Dislike_Action{{ post.id }}">
+                                {% if post in norma_post_likes %}
+                                <img src="{% static 'Images/IconForPosts/DisLikeIcon.svg' %}">
+                                {% else %}
+                                <img src="{% static 'Images/IconForPosts/LikeIcon.svg' %}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="NormalPost_Link_Container">Comments:{{ post.get_comments_total }}
+                            <div class="NormalPost_Link_Container_Image User_Profile_Comment_Target"
+                                id="Triger_CommentBox{{ post.id }}">
+                                <div class="OnClick_Comments_Button User_Profile_Comment_Target"
+                                    id="Holder{{ post.id }}">
+                                    <a href="{% url 'NormalPost_Comment_List' post.id %}"
+                                        class="Load_NormalPost_Comments" id="Display_section{{ post.id }}">
+                                        <input type="hidden" value="{{ post.id }}"
+                                            id="Value_PostId_Display_section{{ post.id }}">
+                                        <img src="{% static 'Images/IconForPosts/comment.svg' %}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="NormalPost_Link_Container">Shere
+                            <div class="NormalPost_Link_Container_Image">
+                                <img src="{% static 'Images/IconForPosts/Share3.svg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="User_Post_Holder_Content_Flag NormalPost_Link_Container">
+                            <a href="#">...</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- *************[ Only User (MY) Normal Post Container ]************** -->
+                {% for mypost in my_normal_post_lists %}
+                <div class="User_Profile_Normal_Posts_Cards"
+                    id="Target_FadeOut_This_Dive_Delete_The_NormalPost{{ mypost.id }}">
+                    <!-- Define User and TimeStamp -->
+                    <div class="User_Post_Holder_Content_Header">
+                        <div class="User_Post_Holder_Content_Header_Name">
+                            Total Likes: {{ mypost.likedislike.get_total_like }}
+                        </div>
+                        <div class="User_Post_Holder_Content_Header_Time">
+                            {{ mypost.creat_date }}
+                        </div>
+                    </div>
+
+                    <!-- User Profile Pick and Post Description -->
+                    <div class="User_Post_Holder_Content_Navigation">
+                        <div class="User_Post_Holder_Content_Navigation_Image">
+                            <img src="{{ mypost.uploded_by.profile_pick.url }}" alt='*'>
+                        </div>
+                        <div class="User_Post_Holder_Content_Navigation_Description">
+                            <!-- :Description: -->
+                            {{ mypost.subject }}
+                        </div>
+                    </div>
+
+                    <!-- Post Image Container -->
+                    <div class="User_Post_Holder_Contentr_Body">
+                        <img src="{{ mypost.post_pick.url }}" alt="post img"
+                            id="NormalPost_Image_Triger_CommentBox{{ mypost.id }}">
+                    </div>
+
+                    <!-- Post Like, Comment, Shere And Flag Section -->
+                    <div class="User_Post_Holder_Content_Footer">
+                        <div class="NormalPost_Link_Container">Re-Post
+                            <a href="#">
+                                <img src="{% static 'Images/IconForPosts/EditSomeThing.svg' %}">
+                            </a>
+                        </div>
+                        <div class="NormalPost_Link_Container">Reply:
+                            <div class="NormalPost_Link_Container_Image User_Profile_Comment_Target"
+                                id="Triger_CommentBox{{ mypost.id }}">
+                                <div class="OnClick_Comments_Button User_Profile_Comment_Target"
+                                    id="Holder{{ mypost.id }}">
+                                    <a href="{% url 'NormalPost_Comment_List' mypost.id %}"
+                                        class="Load_NormalPost_Reply" id="Display_section{{ mypost.id }}">
+                                        <input type="hidden" value="{{ mypost.id }}"
+                                            id="Value_PostId_Display_section{{ mypost.id }}">
+                                        <img src="{% static 'Images/IconForPosts/Replying.svg' %}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="NormalPost_Link_Container">Shere
+                            <div class="NormalPost_Link_Container_Image">
+                                <img src="{% static 'Images/IconForPosts/Share3.svg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="NormalPost_Link_Container">
+                            <form method="post" action="{% url 'Delete_Normal_Post' mypost.id %}"
+                                class="Delete_The_NormalPost" id="Delete_The_NormalPost{{ mypost.id }}">
+                                {% csrf_token %}
+                                <!-- This is Normal Post Delete Button -->
+                                <button type="submit">
+                                    <img src="{% static 'Images/IconForPosts/DeleteSomeThig.svg' %}" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~
+                                This is User List Base Container
+                    ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="All_Users_List All_Users_List_Hide" id="User_Profile_User_List_Base_Container">
+                    <div class="All_Users_List_Holder_Container" id="All_Users_List_Holder_Container">
+                        {% for users in UsersList %}
+
+                        {% if request.user.normalprofile.id is users.normalprofile.id %}
+                        <div class="Lists_Of_AllUsers">
+                            <div class="All_User_List_Container_Inner_Content_User_Image">
+                                <a href="#">
+                                    <img src="{{ users.normalprofile.profile_pick.url }}" alt="">
+                                </a>
+                            </div>
+                            <div class="All_User_List_Container_Inner_Content_User_DetailsContainer">
+                                {{ users.normalprofile.name }}
+                            </div>
+                            <div class="All_User_List_Container_Inner_Content">
+                                <a href="#" class="Action_Follow_UnFollow">
+                                    <button class="All_User_List_Container_Inner_Content_Follow_Button">
+                                        Here I Am...
+                                    </button>
+                                </a>
+                                {% else %}
+
+                                <div class="Lists_Of_AllUsers">
+                                    <div class="All_User_List_Container_Inner_Content_User_Image">
+                                        <a href="{% url 'All_User_Details_page' users.id %}">
+                                            <img src="{{ users.normalprofile.profile_pick.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="All_User_List_Container_Inner_Content_User_DetailsContainer">
+                                        {{ users.normalprofile.name }}
+                                    </div>
+                                    <div class="All_User_List_Container_Inner_Content">
+                                        <a href="{% url 'Follow_UnFollow' users.normalprofile.id %}"
+                                            class="Action_Follow_UnFollow">
+                                            {% if users.normalprofile in following__un_following %}
+                                            <button class="All_User_List_Container_Inner_Content_UnFollow_Button">
+                                                <img src="{% static 'Images/IconsForFollow_UnFollow/unfollow.svg' %}"
+                                                    alt="">
+                                                Un Follow
+                                            </button>
+                                            {% else %}
+                                            <button class="All_User_List_Container_Inner_Content_Follow_Button">
+                                                <img src="{% static 'Images/IconsForFollow_UnFollow/follower.svg' %}"
+                                                    alt="">
+                                                Follow
+                                            </button>
+                                            {% endif %}
+                                        </a>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~
+                                This is User List Base Container
+                        ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~ -->
+                        <div class="All_Users_List All_Users_List_Hide" id="User_FriendsList_Base_container">
+                            <div class="All_Users_List_Holder_Container" id="FollowingList_Holder_Container">
+                                {% for user in followings %}
+                                <div class="Lists_Of_AllUsers">
+                                    <div class="All_User_List_Container_Inner_Content_User_Image">
+                                        <a href="{% url 'All_User_Details_page' user.following_user.id %}">
+                                            <img src="{{ user.following_user.profile_pick.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="All_User_List_Container_Inner_Content_User_DetailsContainer">
+                                        {{ user.following_user.name }}
+                                    </div>
+                                    <div class="All_User_List_Container_Inner_Content">
+                                        <a href="{% url 'Create_Chat' user.following_user.id %}">
+                                            Message
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- ~~~~~~#~~~~~~~#~~~~~~~#[ This is Post Comments PopUp Container ]#~~~~~~#~~~~~#~~~~~~#~~~~~~ -->
+                <div class="User_Profile_MessageBox_Popup_Container User_Profile_MessageBox_Popup_Container_Hide Container_Two"
+                    id="User_Profile_MessageBox_Popup_Container">
+
+                    <div class="User_Profile_MessageBox_Popup_Container_InnerContent_Wrapper">
+                        <div class="NormalPost_Image_Copy">
+                            <img src="" class="NormalPost_Image_Copy_ImageAdd">
+                        </div>
+
+                        <div class="Remove_User_Profile_MessageBox_Popup_RemoveDiv">
+                            <button class="Remove_User_Profile_MessageBox_Popup_Container">Close</button>
+                        </div>
+                        <div class="NormalPost_CommentBox_Inner_Container_CommentDive">
+
+                            <!-- ..............* Display All comments *.............. -->
+                            <div class="Contents posts_Comments_Display_section">
+                                <!-- Later We Import Comment And Replyes Here  -->
+                                Comments & Replyes
+                            </div>
+
+                            <!-- ..............* Create Comments Or Replyes *.............. -->
+                            <div class="Contents User_Normal_Posts_Comment_From">
+                                <form action="*" id="NormalPost_Submition_Form">
+                                    {% csrf_token %}
+                                    <textarea placeholder="Enter Tour Comment Here..." required
+                                        id="NormalPost_Submition_Form_Textarea">
+                                    </textarea>
+                                    <input type="hidden" value="" id="Normalr_post_Comments_Id_Get_Here">
+                                    <input type="hidden" value="" id="Normalr_post_Comments_Id_Get_HereNewUrl">
+                                    <button type="submit">
+                                        <img src="{% static 'Images/IconForPosts/send.svg' %}" alt="">
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block javascript %}
+<script src="{% static 'js/normalProfile/NormalPostComment_And_Reply.js' %}" async defer></script>
+<script src="{% static 'js/normalProfile/NormalPost_Delete_And_Like.js' %}" async defer></script>
+<script src="{% static 'js/UsersRelation_Js/Follow_Un_Follow.js' %}" async defer></script>
+
+
+<script src="{% static 'js/normalProfile/normalprofile.js' %}" async defer></script>
+{% endblock %}
+

@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* background-color: chartreuse; */
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+.Basic_From_Holder{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    font-family: sans-serif;
+}
+.Basic_From_Holder::-webkit-scrollbar{
+    display: none;
+}
+.All_From_links{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    height: 60px;
+}
+.All_From_links_list{
+    padding: 5px;
+}
+.All_From_links_list:hover{
+    background-color: #333;
+}
+.All_From_links_list a{
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-width: bolder;
+}
+.All_From_links_list a:hover{
+    color: #fff;
+}
+.Account_Creation_Link_With_Icon{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Account_Creation_Link_Icon{
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background: linear-gradient(to top, #ffff00 0%, #ff3300 100%);
+    box-shadow: 1px 1px 2px rgb(245, 6, 126);
+    transition: 0.5s;
+}
+.Account_Creation_Link_Icon:hover{
+    background: linear-gradient(to bottom, #ffff00 0%, #ff3300 100%);
+    box-shadow: 0px 0px 3px cyan;
+}
+.Main_From_Container_Form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    background-image: url('/static/Images/FromsIcon/Cripton.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+    border-radius: 10px;
+}
+.BasicFrom_InPut_Submit{
+    display: grid;
+    justify-content: center;
+    margin: 1em 0em;
+    color: rgb(7, 5, 107);
+    font-size: 16px;
+}
+.BasicFrom_InPut_Submit label{
+    background-color: rgba(104, 122, 200, 0.6);
+    text-align: center;
+    color: cyan;
+}
+.BasicFrom_InPut_Submit input{
+    width: 300px;
+    height: 25px;
+    border: none;
+    border-bottom: 3px solid rgba(51,255,0,0.6);
+    background-color: rgba(104, 122, 200, 0.6);
+    color: rgb(140, 251, 35);
+    font-size: 16px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+.BasicFrom_InPut_Submit select{
+    width: 300px;
+    height: 25px;
+    border: none;
+    border-bottom: 3px solid rgb(6, 243, 251);
+    background-color: rgba(104, 122, 200, 0.6);
+    font-size: 16px;
+    text-decoration: none;
+    color: cyan;
+}
+.BasicFrom_InPut_Submit input:hover{
+    border-bottom: 3px solid rgb(6, 243, 251);
+    color: cyan;
+}
+
+.BasicFrom_InPut_Submit_TextArea textarea{
+    margin-top: -15px;
+    resize: none;
+    width: 300px;
+    height: 100px;
+    font-size: 14px;
+    padding: 5px;
+    background-color: rgba(104, 122, 200, 0.6);
+    border-radius: 5px;
+    color: black;
+}
+.id_description{
+    align-items: left;
+}
+.BasicFrom_InPut_Submit button{
+    width: 300px;
+    height: 35px;
+    font-size: 18px;
+    color: cyan;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(139, 251, 35, 0.5);
+    /* background-color: rgba(104, 122, 200, 0.6); */
+    box-shadow: 0px 0px 5px blue;
+}
+.BasicFrom_InPut_Submit button:hover{
+    box-shadow: none;
+    border: 1px solid black;
+
+}
+
+@media only screen and (max-width: 420px){
+    .All_From_links_list a{
+        font-size: 12px;
+    }
+}
+

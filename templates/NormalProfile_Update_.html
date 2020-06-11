@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Form</title>
+</head>
+<body>
+<h1>Update Form</h1>
+    <form method="post" action="{% url 'NormalProfileUpdate' user.id %}"  enctype="multipart/form-data" id="normalprofile_form">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

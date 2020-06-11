@@ -1,0 +1,152 @@
+/* Hiding Search Icon */
+.search-box{
+    display: none;
+}
+/* Main Content Start From Here */
+.PostCreateFrom_Manin_Container{
+    display: block;
+    background-color: #fff;
+    height: 100%;
+    width: 98%;
+    text-align: center;
+    overflow: auto;
+    padding-bottom: 5px;
+    color: rgba(96, 96, 245, 0.911);
+}
+.PostCreateFrom_Manin_Container::-webkit-scrollbar{
+    display: none;
+}
+.PostCrateFrom_Holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+.Basic_ProstCreate_Input_Holder{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr auto 4fr 0.75fr 0.75fr;
+    grid-gap: 5px;
+    border-radius: 5px;
+    height: auto;
+    overflow: hidden;
+    max-width: 460px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 2px rgb(41, 41, 42);
+    padding: 5px;
+    min-width: 340px;
+}
+.Basic_ProstCreate_Input{
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 14px;
+}
+.Basic_ProstCreate_Input label{
+    background-color: #fff;
+    font-weight: bold;
+}
+#id_subject{
+    background-color: #fff;
+    border: 1px solid blue;
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.Basic_ProstCreate_Input input:focus{
+    outline: 0;
+}
+
+.Basic_ProstCreate_Input button:focus{
+    outline: 0;
+}
+#Post_Pick_Lable_Selector label{
+    background-color: rgba(128, 255, 0, 0.4);
+    height: 25px;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: green;
+    cursor: pointer;
+}
+#Post_Pick_Lable_Selector label img{
+    height: 25px;
+    width: 25px;
+}
+.UserPost_image_preview__image{
+    display: none;
+    width: 100%;
+    max-width: 340px;
+    max-height: 360px;
+}
+#id_post_pick{
+    display: none;
+}
+.UserPost_image_preview{
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    min-height: 180px;
+}
+.UserPost_image_preview__image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+textarea{
+    resize: none;
+    max-width: 360px;
+    min-height: 60px;
+    max-height: 120px;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    color: blue;
+    border-radius: 5px;
+    overflow: auto;
+}
+textarea:focus{
+    outline: 0;
+}
+.Basic_ProstCreate_Input button{
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.Basic_ProstCreate_Input_Submit_Button{
+    background-color: rgba(128, 255, 0, 0.4);
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+.Basic_ProstCreate_Input_Cancel_Button{
+    background-color: rgba(255, 68, 0, 0.4);
+    font-size: 18px;
+    font-weight: bold;
+    display: grid;
+    overflow: hidden;
+}
+.Basic_ProstCreate_Input_Cancel_Button a{
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: red;
+    padding-top: 5px;
+}
+@media only screen and (max-width: 420px){
+    .PostCreateFrom_Manin_Container{
+        width: 100%;
+    }
+    .PostCrateFrom_Holder{
+        width: 100%;
+    }
+    .Basic_ProstCreate_Input_Holder{
+        font-size: 12px;
+        width: 100%;
+        padding: 0px;
+        box-shadow: none;
+    }
+}

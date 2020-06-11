@@ -1,0 +1,102 @@
+<!--=========================[We extended Base Html page by this code]=========================-->
+{% extends 'base.html' %}
+{% load static %}
+
+<!--==========================[Css content of Profile page]==========================-->
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/All_Products.css' %}" type="text/css">
+{% endblock %}
+
+<!--==========================[This is the Body part of this page]==========================-->
+{% block HomeContent %}
+        <!--
+        ________________________________________________________________________________________________________
+                                This is Navigation section of the page Which contains Scrallable Menu
+        ________________________________________________________________________________________________________
+        -->
+                <!-- _____________________________________________________________________________________
+                                This is Home Cards and Bargain Message Box Holder
+             _____________________________________________________________________________________-->
+        <div class="HomeCard_Holders_Body">
+
+        <!-- _____________________________________________________________________________________
+                                This is Home Cards Bargain  Body [Container]
+             _____________________________________________________________________________________-->
+            <div class="Cards_Holder_And_Bargain_Holders HomeCard_Holders_MessageBox_body_MainContainer_Hide  HomeCard_Holders_MessageBox_body_MainContainer" >
+
+                <div class="Card_Holders_MessageBox_Body">
+                    <!-- ~~~~~~~~~~~~~~~[ Message Box Inner Contents ]~~~~~~~~~~~~~~~ -->
+                    <div class="HomeCard_Bargain_Box_content Close_HomeCard_Message_Box">
+                        <img src="{% static 'Images/IconForProfile/toggleUp-24px.svg' %}" alt="">
+                    </div>
+                    <div class="HomeCard_Bargain_Box_content Close_HomeCard_Message_Box_Body">
+                        We Add Content later
+                    </div>
+                    <div class="HomeCard_Bargain_Box_content Close_HomeCard_Message_Box_Footer">
+                        <form action="#">
+                            <div class="Bargain_Requirement_Input">
+                                <input type="text" placeholder="Enter Your Requirement...." required>
+                            </div>
+                            <div class="Bargain_Requirement_Submit">
+                                <button type="submit">
+                                    <img src="{% static 'Images/IconsForHome/SignUpIcons/send.svg' %}" alt="Send">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- _____________________________________________________________________________________
+                                This is Home Cards Body [Container]
+                 _____________________________________________________________________________________-->
+            <div class="Cards_Holder_And_Bargain_Holders HomeCard_Holders_CardsHolder_body">
+                {% for product in products %}
+                <!-- ********************[ Home Cards Section ]******************** -->
+                <div class="HomeCard_Cards">
+                    <!-- ~~~~~~~~~~~~~~~~~~[ Product Name ]~~~~~~~~~~~~~~~~~~  -->
+                    <div class="InnerContent_Of_HomeCard_Cards">
+                        {{ product.prod_name }}
+                    </div>
+                    <!-- ~~~~~~~~~~~~~~~~~~[ Product Offer ]~~~~~~~~~~~~~~~~~~  -->
+                    <div class="InnerContent_Of_HomeCard_Cards InnerContent_Of_HomeCard_Cards2">Offer: {{ product.prod_offer }}%</div>
+                    <!-- ~~~~~~~~~~~~~~~~~~[ Product Picture ]~~~~~~~~~~~~~~~~~~  -->
+                    <div class="InnerContent_Of_HomeCard_Cards InnerContent_Of_HomeCard_Cards3">
+                        <div class="InnerContent_Of_HomeCard_ImageContainer">
+                            <img src="{{ product.prod_picture.url }}" alt="">
+                        </div>
+                    </div>
+                    <!-- ~~~~~~~~~~~~~~~~~~[ Product Price & Upload-By Section ]~~~~~~~~~~~~~~~~~~  -->
+                    <div class="InnerContent_Of_HomeCard_Cards HomeCards_Product_Pric_Upload_By_Section">
+                        <div class="InnerContent_Of_HomeCard_Cards_Price">Rs.{{ product.prod_price }}/{{ product.in_terms_of }}</div>
+                        <div class="InnerContent_Of_HomeCard_Cards_Price_Upload_by">Loc</div>
+                        <div class="InnerContent_Of_HomeCard_Cards_Price_Upload_by">By</div>
+                    </div>
+                    <!-- ~~~~~~~~~~~~~~~~~~[ Product Links ]~~~~~~~~~~~~~~~~~~  -->
+                    <div class="InnerContent_Of_HomeCard_Cards Home_Products_Selection_Links_Holder">
+                        <div class="Home_Products_Selection_Links">
+                            <a href="#" class="href">Details</a>
+                        </div>
+                        <div class="Home_Products_Selection_Links">
+                            <a href="#" class="href">Cart</a>
+                        </div>
+                        <div class="Home_Products_Selection_Links HomeCard_Bargain_TiggerButton">
+                            Bargain
+                        </div>
+                        <div class="none">
+                            ...
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!--
+        ________________________________________________________________________________________________________
+                                This is Footer section Which contains Others Menu
+        ________________________________________________________________________________________________________
+        -->
+
+    <script src="{% static 'js/AllProducts.js' %}" async defer></script>
+{% endblock %}

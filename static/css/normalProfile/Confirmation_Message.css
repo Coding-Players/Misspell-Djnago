@@ -1,0 +1,60 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ -: This Section is for Confirmation Message :-
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.Profile_Page_User_Action_Confirmation_Container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: transparent;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  z-index: 800;
+}
+
+/* Hiding Comments Section  */
+.Profile_Page_User_Action_Confirmation_Container_Hide{
+  display: none;
+}
+
+/* =====================[ Profile page Confirmation Card ]===================== */
+.Profile_Page_Confirmation_Card{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  min-width: 300px;
+  max-width: 50%;
+  min-height: 100px;
+  max-height: 450px;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px blue;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  grid-gap: 5px;
+  align-items: center;
+}
+.Profile_Page_Confirmation_Card button{
+  height: 25px;
+  width: 100%;
+  border: none;
+}
+.ProfilePage_Confirmation_NoteSure_Button{
+  background-color: rgba(188, 253, 96, 0.605);
+  color: green;
+}
+.ProfilePage_Confirmation_NoteSure_Button:focus{
+  outline: 0;
+  border: 1px solid green;
+  box-sizing: border-box;
+}
+.ProfilePage_Confirmation_Sure_Button{
+  background-color: rgba(251, 186, 126, 0.659);
+  color: red;
+}
+.ProfilePage_Confirmation_Sure_Button:focus{
+  outline: 0;
+  border: 1px solid red;
+  box-sizing: border-box;
+}

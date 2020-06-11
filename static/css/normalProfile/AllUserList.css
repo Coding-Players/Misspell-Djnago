@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+  /* ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~
+          This is User List Base Container
+  ~~~~~~~~~~~~~~~~~~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~ */
+.All_Users_List{
+    height: 100%;
+    padding: 0px 5px;
+    overflow: auto;
+}
+/* .All_Users_List_Hide{
+    display: none;
+} */
+.All_Users_List::-webkit-scrollbar{
+    display: none;
+}
+.All_Users_List_Holder_Container{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  max-height: 100%;
+  padding-bottom: 5px;
+}
+.All_Users_List_Holder_Container::-webkit-scrollbar{
+    display: none;
+}
+.Lists_Of_AllUsers{
+    box-shadow: 0px 0px 2px #333;
+    height: 50px;
+}
+
+/* Styling User lists */
+.Lists_Of_AllUsers{
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr;
+}
+.All_User_List_Container_Inner_Content_User_Image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: 5px;
+}
+.All_User_List_Container_Inner_Content_User_Image a{
+    height: 36px;
+    width: 36px;
+    text-decoration: none;
+}
+
+.All_User_List_Container_Inner_Content_User_Image a img{
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border: 1px solid red;
+    padding: 1px;
+    object-fit: cover;
+}
+.All_User_List_Container_Inner_Content_User_DetailsContainer{
+    text-align: left;
+    font-size: 14px;
+    font-variant: small-caps;
+    color: #159AC4;
+    font-weight: bold;
+}
+
+.All_User_List_Container_Inner_Content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.All_User_List_Container_Inner_Content a{
+    width: 96%;
+    text-decoration: none;
+}
+.All_User_List_Container_Inner_Content_Follow_Button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 96%;
+    height: 35px;
+    border: none;
+    background-color: rgba(207, 255, 135, 0.7);
+    color: green;
+    font-size: 12px;
+    font-style: oblique;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 0.5px solid green;
+}
+.All_User_List_Container_Inner_Content_Follow_Button img{
+    height: 20px;
+    width: 20px;
+}
+.All_User_List_Container_Inner_Content_UnFollow_Button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 96%;
+    height: 35px;
+    border: none;
+    background-color: rgba(255, 191, 165, 0.7);
+    color: red;
+    font-size: 12px;
+    font-style: oblique;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 0.5px solid red;
+}
+.All_User_List_Container_Inner_Content_UnFollow_Button img{
+    height: 20px;
+    width: 20px;
+}
+.All_User_List_Container_Inner_Content button:focus{
+    outline: 0;
+}
+
+  /* ##########################[ Making This Page As Responsive ]#################  */
+@media only screen and (max-width: 920px){
+      /* ~~~~~~~~~~~~~~~~*This is User List Base Container *~~~~~~~~~~~~~~~ */
+    .All_Users_List{
+        padding:0px;
+        font-size: 12px;
+    }
+    .All_User_List_Container_Inner_Content_User_DetailsContainer{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 420px){
+}

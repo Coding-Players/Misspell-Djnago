@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+.input:focus{
+    outline: 0;
+}
+.button:focus{
+    outline: 0;
+}
+
+/*  _____________________________________________________________________________________
+                This is Home Cards and Bargain Message Box Holder
+    _____________________________________________________________________________________*/
+.HomeCard_Holders_Body{
+    display: block;
+    width: 100%;
+}
+
+/*  _____________________________________________________________________________________
+                This is Home Cards Bargain  Body [Container]
+    _____________________________________________________________________________________*/
+.HomeCard_Holders_MessageBox_body_MainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 80%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 700;
+}
+
+/* Hiding Message Box Container  */
+.HomeCard_Holders_MessageBox_body_MainContainer_Hide{
+    display: none;
+}
+.Card_Holders_MessageBox_Body{
+    display: grid;
+    grid-template-rows: 0.5fr 6fr 1fr;
+    width: 100%;
+    max-width: 500px;
+    height: 220px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0px 5px;
+    background-color: transparent;
+    position: absolute;
+    padding: 5px;
+}
+
+/* ==================[ Message Box Inner Contents ]================== */
+.HomeCard_Bargain_Box_content{
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(34,34,34,0.7);
+    box-shadow: 0px 0px 4px rgb(2, 255, 255);
+    color: #fff;
+}
+.Close_HomeCard_Message_Box{
+    color: red;
+    font-weight: bolder;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-sizing: border-box;
+    border-bottom: none;
+    padding-top: 5px;
+}
+.Close_HomeCard_Message_Box img{
+    transform: rotate(180deg);
+}
+.Close_HomeCard_Message_Box_Body{
+    border: none;
+}
+.Close_HomeCard_Message_Box_Footer{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+}
+.Close_HomeCard_Message_Box_Footer form{
+    display: flex;
+    height: 35px;
+    width: 100%;
+    justify-content: center;
+}
+.Bargain_Requirement_Input{
+    width: 75%;
+}
+.Bargain_Requirement_Input input{
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    padding: 0px 5px;
+    background-color: rgba(104, 122, 200, 0.7);
+    color: cyan;
+}
+.Bargain_Requirement_Input input:focus{
+    outline: 0;
+}
+.Bargain_Requirement_Submit{
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+}
+
+.Bargain_Requirement_Submit button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(127, 255, 0, 0.3);
+}
+.Bargain_Requirement_Submit button:focus{
+    outline: 0;
+}
+.Bargain_Requirement_Submit button img{
+    height: 25px;
+    width: 25px;
+}
+/*  _____________________________________________________________________________________
+                This is Home Cards Body [Container]
+    _____________________________________________________________________________________*/
+.HomeCard_Holders_CardsHolder_body{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 5px;
+    padding: 5px 5px;
+    grid-auto-flow: dense;
+}
+
+/* ********************[ Home Cards Section ]******************** */
+.HomeCard_Cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 16px auto 20px 30px;
+    border-radius: 5px;
+    min-height: 220px;
+    box-shadow: 0px 0px 2px #333;
+}
+
+/* .InnerContent_Of_HomeCard_Cards{
+    border: 1px solid black;
+    box-sizing: border-box;
+} */
+/* ~~~~~~~~~~~~~~~~~~[ Product Name ]~~~~~~~~~~~~~~~~~~  */
+.InnerContent_Of_HomeCard_Cards{
+    font-size: 13px;
+    justify-content: center;
+    display: flex;
+    color: #159AC4;
+    text-transform: capitalize;
+}
+/* ~~~~~~~~~~~~~~~~~~[ Product Offer ]~~~~~~~~~~~~~~~~~~  */
+.InnerContent_Of_HomeCard_Cards2{
+    background-color: rgba(34, 120, 170, 0.5);
+    color: #fff;
+    width: auto;
+}
+/* ~~~~~~~~~~~~~~~~~~[ Product Picture ]~~~~~~~~~~~~~~~~~~  */
+.InnerContent_Of_HomeCard_Cards3{
+    background-color: transparent;
+    margin-bottom: 0px;
+}
+.InnerContent_Of_HomeCard_ImageContainer{
+    height: auto;
+    max-height: 350px;
+}
+.InnerContent_Of_HomeCard_ImageContainer img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+/* ~~~~~~~~~~~~~~~~~~[ Product Price & Upload-By Section ]~~~~~~~~~~~~~~~~~~  */
+.HomeCards_Product_Pric_Upload_By_Section{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 2.5fr 0.75fr 0.75fr;
+    overflow: auto;
+    font-size: 13px;
+}
+/* ~~~~~~~~~~~~~~~~~~[ Product Links ]~~~~~~~~~~~~~~~~~~  */
+.Home_Products_Selection_Links_Holder{
+    display: grid;
+    grid-template-columns: 0.9fr 0.7fr 1.25fr 0.25fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); */
+    align-items: center;
+    height: 20px;
+    grid-gap: 5px;
+    font-size: 13px;
+    padding: 0px 3px;
+    justify-content: center;
+    padding-top: 5px;
+}
+.Home_Products_Selection_Links{
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: green;
+    background-color: aquamarine;
+    padding: 3px 0px;
+}
+.Home_Products_Selection_Links:hover{
+    box-shadow: none;
+}
+.Home_Products_Selection_Links a{
+    text-decoration: none;
+    color: green;
+}
+
+/*  _____________________________________________________________________________________
+                Making This Page Responsive
+    _____________________________________________________________________________________*/
+
+@media only screen and (max-width: 450px){
+    .HomeCard_Holders_CardsHolder_body{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-gap: 3px;
+        padding: 3px 3px;
+    }
+    .Card_Holders_MessageBox_Body{
+        bottom: 0px;
+    }
+    .Bargain_Requirement_Input input{
+        font-size: 15px;
+    }
+    /* ********************[ Home Cards Section ]******************** */
+    .HomeCard_Cards{
+        max-height: 280px;
+    }
+    .InnerContent_Of_HomeCard_ImageContainer{
+        max-height: 180px;
+    }
+}

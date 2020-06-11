@@ -1,0 +1,19 @@
+# IDE Files
+.idea
+
+# DB Files
+db.sqlite3
+
+# media Files
+media/Profile
+media/SerVProfile
+media/UsrPost
+
+# static
+#jquery/jquery-3.4.1.min.js
+#
+#
+#static/Images/IconForProfile/camera.svg.
+#static/Images/IconsForHome/friendship.svg.
+#static/Images/IconsForHome/product.svg.
+

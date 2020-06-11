@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/SignUp_Style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/Notification_Message.css' %}" type="text/css">
+</head>
+<body>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~This is message section~~~~~~~~~~~~~~~~~~  -->
+        {% for message in messages %}
+        <div id="Notification_Message">
+            <div id="Notification_message_holder" {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                <div id="Cancil_Notification_message">
+                    X
+                </div>
+                <div id="This_is_Notification_message">
+                {{ message }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    <!-- ==========================[ SignUp Form Section ]===========================  -->
+
+      <div id="It_is_SignUpfrom">
+        <div class="Signup-Rapper">
+            <div id="SignupFrom-container">
+                <span class="SignupFrom-Heding">
+                    <h2>Log In Please</h2>
+                </span>
+                <!-- ~~~~~~~~~~~~~~~~~~This is the from section~~~~~~~~~~~~~~~~~~  -->
+                <form action="{% url 'LogIn' %}" method="post">
+                    {% csrf_token %}
+                    <div class="SignupInpu-group">
+                        <div class="SignUp-IconHolder">
+                            <img src="{% static 'Images/IconsForHome/SignUpIcons/user.svg' %}" alt="UserIcon">
+                        </div>
+                        <input type="text" placeholder="Username....." name="Login_username" required>
+                        <span class="SignUp-bar"></span>
+                    </div>
+
+                    <!-- This is password section  -->
+                    <div class="SignupInpu-group">
+
+                        <div class="SignUp-IconHolder">
+                            <img src="{% static 'Images/IconsForHome/SignUpIcons/lock.svg' %}" alt="LockIcon" style="height: 30px; width: 30px;">
+                        </div>
+                        <input type="password" placeholder="Password....." id="id_password" name="Login_password" required>
+                        <span class="SignUp-bar"></span>
+                        <div class="SignUp-IconHolder" id="Password_icon_In_S">
+                            <img src="{% static 'Images/IconsForHome/SignUpIcons/invisible.svg' %}" alt="InvisibleIcon">
+                        </div>
+                    </div>
+
+                    <!-- This is Required too -->
+                        <div class="SignUp-IconHolder" id="ConfirmPassword_icon_In_S">
+                        </div>
+
+                    <!-- That section Target SignUP  -->
+                    <div class="SignupInpu-group">
+                        <button type="submit">
+                            <div class="SignUp-IconSubmit">
+                                <img src="{% static 'Images/IconsForHome/SignUpIcons/send.svg' %}" alt="SendIcon">
+                            </div>
+                        </button>
+                    </div>
+                    <div class="SignupSwitch-login">
+                        <a href="{% url 'SignUp' %}">I don't have an Account?
+                            <span class="SignUp-bar">SignUp</span>
+                        </a>
+                    </div>
+                </form>
+                <div class="Cancel_SignUp" id="Candel_SignUp">
+                    <a href="{% url 'ShopHome' %}"><button>Cancel</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- This is javascript Section-->
+        <script src="{% static 'js/Signup_Handler.js' %}"></script>
+        <script src="{% static 'js/Notification_Message.js' %}" async defer></script>
+</body>
+</html>
