@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'Account.apps.AccountConfig',
     'ShopHome.apps.ShophomeConfig',
+    'MapCap.apps.MapcapConfig',
 ]
 
 MIDDLEWARE = [
