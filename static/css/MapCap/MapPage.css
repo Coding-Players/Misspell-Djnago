@@ -1,0 +1,37 @@
+/* Optional: Makes the sample page fill the window. */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.Base_Holder{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.MapHolder{
+    position: absolute;
+    height: 80vh;
+    width: 84%;
+    bottom: 60px;
+}
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+/* Latitude and Longitude Input Section  */
+#Input_Value for{
+    display: flex;
+    width: 100%;
+}
+@media only screen and (max-width: 580px){
+    .MapHolder{
+        width: 100%;
+        bottom: 40px;
+    }
+}
+
