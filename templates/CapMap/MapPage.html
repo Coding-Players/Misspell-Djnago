@@ -1,65 +1,46 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html class="no-js">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'css/MapCap/MapPage.css' %}">
-</head>
+{% block Allcss%}
+    <link rel="stylesheet" href="{% static 'css/MapCap/MapPage.css' %}" type="text/css">
+{% endblock %}
 
-<body>
-    <div id="Base_Holder">
-    <!-- Location Part -->
-        <div id="Input_Value">
-            <form method="post" action="{% url 'Map_Page' %}">
-                {% csrf_token %}
-                <div>Latitude:<input type="text" name="latitude" id="lat_value" required></div>
-                <div>longitude:<input type="text" name="longitude" id="lng_value" required></div>
-                <div><button type="submit">Submit</button></div>
-            </form>
-        </div>
-        <div class="MapHolder">
-            <!-- This is Map part -->
-            <div id="map"></div>
-        </div>
-    </div>
 
+{% block HomeContent %}
+<div id="Base_Map_Holder">
+<!--    &lt;!&ndash; This is Map part &ndash;&gt;-->
+    <div id="map"></div>
+
+<!--    This below div is Required adjusting the map-->
+    <div></div>
+</div>
+
+<!--// All scripts are here-->
     <script>
         function initMap() {
             // Map Option
             let options = {
-                zoom: 10,
+                minZoom: 3,
+                maxZoom: 24,
+                zoom: 8,
                 center: { lat: 22.6759958, lng: 88.0488376 }
             }
+
 
 
             // New Map
             var map = new
                 google.maps.Map(document.getElementById('map'), options);
 
-            {% for location in all_location %}
+
             // Add Marker
+            {% for location in all_location %}
             addMarker({
                 coords: { lat: {{ location.latitude }}, lng: {{ location.longitude }} },
-                iconImg: "{% static '/Images/CapMap/Food-Icon.svg' %}",
-                contentString: 'Get Your Food Here'
-
+                iconImg: "{% static '/Images/CapMap/Location-Red.svg' %}",
+                contentString: '<div class="mark_here">Get Your Food Here<div>'
             });
             {% endfor %}
-            addMarker({
-                coords: { lat: 22.586373, lng: 88.0488376 },
-                iconImg: "{% static '/Images/CapMap/Locatin-Blue.svg' %}",
-                contentString: 'Blue Icon'
-            });
-            addMarker({
-                coords: { lat: 21.886000, lng: 87.0000376 } ,
-                iconImg: "{% static '/Images/CapMap/Green-pin.svg' %}",
-                contentString: 'Ping Pong'
-            });
 
             function addMarker(props) {
                 var marker = new google.maps.Marker({
@@ -87,44 +68,12 @@
                 }
             }
 
-            google.maps.event.addListener(map, 'click', function (event) {
-
-                // console.log(event.latLng);   // Get latlong info as object.
-                // console.log("Latitude: " + event.latLng.lat() + " " + ", longitude: " + event.latLng.lng());
-                let marker;
-                google.maps.event.addListener(map, 'click', function (event) {
-                    placeMarker(event.latLng);
-                });
-
-                function placeMarker(location) {
-                    if (marker == null) {
-                        marker = new google.maps.Marker({
-                            position: location,
-                            map: map,
-                            icon: "{% static '/Images/CapMap/Location-Red.svg' %}"
-                        });
-
-                        let lat_value_last = document.getElementById('lat_value');
-                        let lng_value_last = document.getElementById('lng_value');
-                        lat_value_last.value = location.lat();
-                        lng_value_last.value = location.lng();
-                    }
-                    else {
-                        marker.setPosition(location);
-                    }
-                }
-
-            });
-
         }
 
     </script>
 
     <!-- Embeding Map Api -->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key={{ key }}&callback=initMap">
-        </script>
-<!--    <script src="js/index.js" async defer></script>-->
-</body>
-
-</html>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw6G6AnBOLTw1tcl3n4sxxvIPZTqO2khQ&callback=initMap">
+    </script>
+{% endblock %}

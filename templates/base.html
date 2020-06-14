@@ -138,19 +138,7 @@
                             </div>
                         </div>
                     </a>
-                    <!-- Chat Icon With link  -->
-                    <a
-                    {% if user.is_authenticated %} href="{% url 'Friends_list' request.user.id %}"
-                    {% else %} href="{% url 'LogIn' %}" {% endif %} class="Go_to_Other_page">
-                        <div class="Scroll-MenuBar-iconStyle">
-                            <div class="Scroll-MenuBar-iconStyle-img">
-                                <img src="{%static 'Images/IconsForHome/AllMessage.svg'%}">
-                            </div>
-                            <div class="Scroll-MenuBar-iconStyle-txt">
-                                Chat
-                            </div>
-                        </div>
-                    </a>
+
                     <!-- Tending Icon With link  -->
                     <a href="#" class="Go_to_Other_page">
                         <div class="Scroll-MenuBar-iconStyle">
@@ -162,6 +150,7 @@
                             </div>
                         </div>
                     </a>
+
                     <!-- Settings Icon With link  -->
                     <a href="#">
                         <div class="Scroll-MenuBar-iconStyle">
@@ -258,6 +247,21 @@
                     </div>
                 </div>
             </a>
+
+            <!-- Chat Icon With link  -->
+            <a {% if user.is_authenticated %} href="{% url 'Friends_list' request.user.id %}"
+                {% else %} href="{% url 'LogIn' %}" {% endif %} class="Go_to_Other_page">
+
+                <div class="Scroll-MenuBar-iconStyle footer-icon-style">
+                    <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
+                        <img src="{%static 'Images/CapMap/send.svg'%}">
+                    </div>
+                    <div class="footer-icon-style-txt">
+                        Chat
+                    </div>
+                </div>
+            </a>
+
             <a href="{% url 'Map_Page' %}" class="Go_to_Other_page">
                 <div class="Scroll-MenuBar-iconStyle footer-icon-style">
                     <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
@@ -269,16 +273,6 @@
                 </div>
             </a>
 
-            <a href="#" class="Go_to_Other_page">
-                <div class="Scroll-MenuBar-iconStyle footer-icon-style">
-                    <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">
-                        <img src="{%static 'Images/IconsForHome/play.svg'%}">
-                    </div>
-                    <div class="footer-icon-style-txt">
-                        Videos
-                    </div>
-                </div>
-            </a>
             <a href="{% url 'Shoping_Cart' %}">
                 <div class="Scroll-MenuBar-iconStyle footer-icon-style">
                     <div class="Scroll-MenuBar-iconStyle-img footer-icon-style-img">

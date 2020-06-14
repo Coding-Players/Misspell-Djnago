@@ -12,14 +12,15 @@ def map_view(request):
     if request.method == 'POST':
         lat = request.POST["latitude"]
         lng = request.POST["longitude"]
+        pop_up_text = request.POST["PopUp_Text"]
         # print(f"Latitude: {lat}\nLongitude: {lng}")
         hunter1 = float(lat)
         hunter2 = float(lng)
-        add_lat = MapLocation(latitude=hunter1, longitude=hunter2)
+        add_lat = MapLocation(latitude=hunter1, longitude=hunter2, pop_up_text=pop_up_text)
         add_lat.save()
         print(add_lat)
         # print(hunter1, hunter2)
-
+        return render(request, 'CapMap/MapPage.html')
     return render(request, 'CapMap/MapPage.html', {
             'key': key,
             'all_location': all_location}
