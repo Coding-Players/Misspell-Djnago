@@ -1,3 +1,6 @@
+body::-webkit-scrollbar{
+    display: none;
+}
 #Base_Map_Holder{
     display: grid;
     grid-template-columns: 1fr;
@@ -10,6 +13,7 @@
     bottom: 60px;
     overflow: hidden;
 }
+
 /* Map Styele */
 #map{
     height: 100%;

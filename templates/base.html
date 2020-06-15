@@ -62,20 +62,19 @@
                         <a href="#">Coming Soon</a>
                         {% else %}
                         <a href="{% url 'LogIn' %}" >Upload Products</a>
-                        <a href="#">Coming Soon</a>
                         {% endif %}
                     </div>
                 </li>
 
                 <li class="item" id="abc2">
                     <a href="#abc2" class="Navbtn">
-                        <img src="{%static 'Images/IconsForHome/uploadThings.svg'%}">Set Home Page As
+                        <img src="{%static 'Images/IconsForHome/Settings-tools.svg'%}">Additional Settings
                     </a>
                     <div class="sMenu">
 
 <!--  =====================================[ Just For Test Case ]===================================== -->
                         {% if user.is_authenticated %}
-                        <a href="#">Test</a>
+                        <a href="{% url 'Add_Location' %}">Set Your Location</a>
                         <a href="#" >Profile Update</a>
                         <a href="#">Coming Soon</a>
                         {% endif %}

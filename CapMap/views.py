@@ -27,3 +27,5 @@ def map_view(request):
          )
 
 
+def add_location(request):
+    return render(request, 'CapMap/AddLocation.html')
